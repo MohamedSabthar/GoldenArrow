@@ -57,3 +57,5 @@ $route['translate_uri_dashes'] = false;
 $route['accountant'] ='accountantController';
 $route['accountant/(:num)'] = 'accountantController/index';
 $route['accountant/delete']='/accountantController/deletePaymentRecord';
+$route['accountant/block']='/accountantController/blockPlayerAccount';
+$route['players']='/accountantController/viewPlayers';
