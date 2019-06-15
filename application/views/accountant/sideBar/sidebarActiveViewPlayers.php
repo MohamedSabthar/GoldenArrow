@@ -12,7 +12,7 @@
                 </li>
                 <li class="sidebar-list-item">
                     <a href="#" class="sidebar-link text-muted active">
-                        <i class="fab fa-amazon-pay mr-3 text-gray"></i>
+                    <i class="far fa-user mr-3 text-gray"></i>
                         <span>View Players</span></a>
                 </li>
                 <li class="sidebar-list-item">

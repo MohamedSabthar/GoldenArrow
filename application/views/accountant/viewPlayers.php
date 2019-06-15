@@ -52,7 +52,12 @@
                                         class="col-lg-9 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
 
                                         <p class="mb-0 mt-3 mt-lg-0 mx-5">
-                                            Lorem
+                                        <button type="button" data-toggle="modal" data-target="#addPayment"
+                                        class="btn btn-outline-success"
+                                        onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
+                                        style="font-size:0.7rem">
+                                        Add Payment
+                                    </button>
                                         </p>
                                     </div>
                                 </div>
@@ -104,7 +109,12 @@
                                     class="col-lg-9 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
 
                                     <p class="mb-0 mt-3 mt-lg-0 mx-5">
-                                        Lorem
+                                    <button type="button" data-toggle="modal" data-target="#addPayment"
+                                        class="btn btn-outline-success"
+                                        onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
+                                        style="font-size:0.7rem">
+                                        Add Payment
+                                    </button>
                                     </p>
                                 </div>
                             </div>
@@ -117,5 +127,58 @@
                     <?php endif?>
                 </div>
         </section>
+
+
+          <!-- Add payment model -->
+          <div id="addPayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            class="modal fade text-left" style="display: none;" aria-hidden="true">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 id="exampleModalLabel" class="modal-title">Add Payment</h4>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="/accountantController/addPaymentRecord">
+                            <input type="hidden" name="playerId" id="addPlayertId">
+                            <div class="form-group">
+                                <label>Ammount</label>
+                                <input name="ammount" id="ammount" type="number" placeholder="Ammount"
+                                    class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input name="paymentDate" id="paymentDate" type="date" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Payment Method</label>
+                                <select name="paymentType" id="paymentType" class="form-control">
+                                    <option value="CASH">cash</option>
+                                    <option value="CARD">card</option>
+                                    <option value="ONLINE">online</option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <input type="submit" value="Add" class="btn btn-primary float-right">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<script>
+function setIdToAddPaymentModel(playerId) {
+            document.getElementById("addPlayertId").value = playerId;
+            console.log(playerId)
+        }
+
+        </script>
