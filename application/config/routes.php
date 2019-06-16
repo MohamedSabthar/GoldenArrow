@@ -58,4 +58,6 @@ $route['accountant'] ='accountantController';
 $route['accountant/(:num)'] = 'accountantController/index';
 $route['accountant/delete']='/accountantController/deletePaymentRecord';
 $route['accountant/block']='/accountantController/blockPlayerAccount';
-$route['players']='/accountantController/viewPlayers';
+$route['accountant/players']='/accountantController/viewPlayers';
+$route['accountant/add']='/accountantController/addPaymentRecord';
+$route['accountant/update']='/accountantController/updatePaymentRecord';

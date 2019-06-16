@@ -101,6 +101,7 @@ class AccountantController extends CI_Controller
         redirect('/accountantController/index', 'refresh'); //redirecting to dashboard
     }
 
+    
     public function viewPlayers()
     {
         $header = array("title"=>"Accountant",

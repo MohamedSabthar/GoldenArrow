@@ -16,7 +16,7 @@
                         <span>View Players</span></a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="/accountant/" class="sidebar-link text-muted ">
+                    <a href="/accountant" class="sidebar-link text-muted ">
                         <i class="fab fa-amazon-pay mr-3 text-gray"></i>
                         <span>Players Payment</span></a>
                 </li>
