@@ -108,10 +108,9 @@ class AccountantModel extends CI_Model
 
     public function searchPlayer($nameAndId)
     {
-        $this->db->select('userId,userName');
+        $this->db->select('userId,userName'); //searching for player with given userId or userName
         $this->db->from('user');
        
-        
         if (!empty($nameAndId["playerId"])) {
             $this->db->where('userId', $nameAndId["playerId"]);
         }
@@ -122,7 +121,7 @@ class AccountantModel extends CI_Model
             $query = $this->db->get();
             return $query->result();
         } else {
-            return -1;
+            return -1; //if not input presented returning -1 for conditional rendering
         }
     }
 }

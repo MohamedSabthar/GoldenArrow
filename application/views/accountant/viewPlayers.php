@@ -2,16 +2,15 @@
     <div class="container-fluid px-xl-5">
         <section class="py-5">
             <div class="row">
-
+                <div class="col-lg-6 mb-3">
 
                 <!-- search player form -->
-                <div class="col-lg-6 mb-3">
                     <div class="card mb-4">
                         <div class="card-header">
                             <h3 class="h6 text-uppercase mb-0">Search Players</h3>
                         </div>
                         <div class="card-body">
-                            <form class="form-inline" method="POST" action="/players">
+                            <form class="form-inline" method="POST" action="/accountant/players">
                                 <div class="form-group">
                                     <label for="playerName" class="sr-only">Name</label>
                                     <input id="playerName" type="text" placeholder="Name" class="mr-3 form-control"
@@ -30,12 +29,11 @@
                             </form>
                         </div>
                     </div>
-
+                    <!-- end of search player form -->
 
                     <div style="height:550px;overflow-y:scroll">
-
-
                         <?php if (!empty($searchPlayers) && $searchPlayers!=-1):?>
+                        <!-- player search result -->
                         <h3 class="h6 text-uppercase mb-0 text-center m-4">Search result</h3>
                         <?php foreach ($searchPlayers as $player):?>
                         <div class="col">
@@ -64,35 +62,26 @@
                             </a>
                         </div>
                         <?php endforeach?>
-                        <?php elseif ($searchPlayers==-1):?>
+                        <!-- end of player search result -->
+
+                        <?php elseif ($searchPlayers==-1):?><!-- if not input presented -->
                         <div class="card ">
                             <div class="card-body">
                                 <p class="text-center text-danger">Name or Player Id needed</p>
                             </div>
                         </div>
-                        <?php else:?>
+                        <?php else:?><!-- if no result found -->
                         <div class="card">
                             <div class="card-body">
                                 <p class="text-center">No Matches found</p>
                             </div>
                         </div>
-
                         <?php endif?>
-
                     </div>
-
-
-
-
-
-
-
                 </div>
                 <div class="col-lg-6">
-
-
-
                     <?php if (!empty($players)):?>
+                    <!-- player list -->
                     <h3 class="h6 text-uppercase mb-0 text-center mb-2">All Players</h3>
                     <?php foreach ($players as $player):?>
                     <div class="col">
@@ -121,16 +110,16 @@
                         </a>
                     </div>
                     <?php endforeach?>
-
                     <!--Pagination Links-->
                     <p><?=$links?></p>
+                    <!--end of player list -->
                     <?php endif?>
                 </div>
         </section>
 
 
-          <!-- Add payment model -->
-          <div id="addPayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <!-- Add payment model -->
+        <div id="addPayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             class="modal fade text-left" style="display: none;" aria-hidden="true">
             <div role="document" class="modal-dialog">
                 <div class="modal-content">
@@ -140,7 +129,7 @@
                                 aria-hidden="true">×</span></button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="/accountantController/addPaymentRecord">
+                        <form method="POST" action="/accountant/add">
                             <input type="hidden" name="playerId" id="addPlayertId">
                             <div class="form-group">
                                 <label>Ammount</label>
@@ -151,7 +140,6 @@
                                 <label>Date</label>
                                 <input name="paymentDate" id="paymentDate" type="date" class="form-control" required>
                             </div>
-
                             <div class="form-group">
                                 <label>Payment Method</label>
                                 <select name="paymentType" id="paymentType" class="form-control">
@@ -160,17 +148,15 @@
                                     <option value="ONLINE">online</option>
                                 </select>
                             </div>
-
-
                             <div class="form-group">
                                 <input type="submit" value="Add" class="btn btn-primary float-right">
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
+        <!-- end of Add payment model -->
 
     </div>
 </div>

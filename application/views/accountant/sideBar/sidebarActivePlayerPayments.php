@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="/accountantController/viewPlayers" class="sidebar-link text-muted">
+                    <a href="/accountant/players" class="sidebar-link text-muted">
                         <i class="far fa-user mr-3 text-gray"></i>
                         <span>View Players</span></a>
                 </li>
