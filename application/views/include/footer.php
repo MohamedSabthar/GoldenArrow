@@ -28,6 +28,7 @@
 <!-- <script src="/js/charts-home.js"></script> -->
 <script src="<?php echo base_url("/js/front.js");?>"></script>
 
+
 </body>
 
 </html>

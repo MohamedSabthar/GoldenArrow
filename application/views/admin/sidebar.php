@@ -6,19 +6,21 @@
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item">
                     <a href="#" class="sidebar-link text-muted <?if (strcmp($active, 'dashboard')==0) echo 'active'?>">
-                        <i class="o-home-1 mr-3 text-gray"></i>
+                        <i class="fas fa-home mr-3 text-gray"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-list-item">
                     <a href="/accountantController/viewPlayers" class="sidebar-link text-muted <?if (strcmp($active, 'players')==0) echo 'active'?>">
                         <i class="fas fa-users mr-3 text-gray"></i>
-                        <span>Players</span></a>
+                        <span>Players</span>
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
                     <a href="#" class="sidebar-link text-muted <?if (strcmp($active, 'tournaments')==0) echo 'active'?>">
                         <i class="far fa-futbol mr-3 text-gray"></i>
-                        <span>Tournaments</span></a>
+                        <span>Tournaments</span>
+                    </a>
                 </li>
                 <li class="sidebar-list-item">
                     <a href="#" class="sidebar-link text-muted <?if (strcmp($active, 'trainers')==0) echo 'active'?>">

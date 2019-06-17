@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="<?php echo base_url("/css/custom.css");?>" />
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url("/img/favicon.png?3");?>" />
-</head>
+
+    </head>
 
 <body>
     <!-- navbar-->

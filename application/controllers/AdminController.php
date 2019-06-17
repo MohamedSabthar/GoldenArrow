@@ -11,7 +11,7 @@ class AdminController extends CI_Controller
 
     public function index()
     {
-        //setting header
+        // setting page header
         $header = array("title"=>"Administrator",
                         "dashboardTitle"=>"Administrator Dashboard",
                         "userName"=>"Administrator Name",
@@ -19,11 +19,19 @@ class AdminController extends CI_Controller
         
         $data['active'] = 'dashboard';
 
-        //loding views
+        // loding views
         $this->load->view('include/header', $header);
         $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/home');
         $this->load->view('include/footer');
+    }
+
+    public function test() {
+        $this->load->model('AccountantModel');
+        $data['query'] = $this->AccountantModel->getPlayers();
+        foreach ($data['query'] as $line) {
+            echo $line->userName;
+        }
     }
 
 
