@@ -11,8 +11,7 @@
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="<?php echo base_url("");?>/vendor/bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.0/css/all.css" crossorigin="anonymous" />
     <!-- Google fonts - Popppins for copy-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800" />
     <!-- orion icons-->
@@ -37,7 +36,7 @@
                 <li class="nav-item dropdown ml-auto">
                     <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" class="nav-link dropdown-toggle">
-                        <img src="/img/avatar-6.jpg" alt="<?=$userName?>" style="max-width: 2.5rem;"
+                        <img src="<?=base_url('/img/avatar-6.jpg')?>" alt="<?=$userName?>" style="max-width: 2.5rem;"
                             class="img-fluid rounded-circle shadow" />
                     </a>
 

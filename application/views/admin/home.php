@@ -1,134 +1,93 @@
 <div class="page-holder w-100 d-flex flex-wrap">
-        <div class="container-fluid px-xl-5">
-          <section class="py-5">
-            <div class="row mb-4">
-              <div class="col-lg-8 mb-4 mb-lg-0">
-                <div class="card">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Line chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-5 text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <div class="chart-holder mt-5 mb-5">
-                      <canvas id="lineChartExample"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Line chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-holder">
-                      <canvas id="lineCahrtsm1"></canvas>
-                    </div>
-                  </div>
-                </div>
-                <div class="card mb-3">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Bar chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-holder">
-                      <canvas id="barChartExample"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-lg-4">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-holder">
-                      <canvas id="pieChart1"></canvas>
-                    </div>
-                  </div>
-                </div>
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-holder">
-                      <canvas id="pieChart2"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-8">
-                <div class="card">
-                  <div class="card-header">
-                    <h2 class="h6 mb-0 text-uppercase">Bar chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-5 text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <div class="chart-holder mt-5 mb-5">
-                      <canvas id="barChartExample1"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Doughnut chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-3 text-gray">Lorem ipsum dolor sit amet.</p>
-                    <div class="chart-holder">
-                      <canvas id="doughnutChartExample"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-3 text-gray">Lorem ipsum dolor sit amet.</p>
-                    <div class="chart-holder">
-                      <canvas id="pieChartExample"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Polar chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-3 text-gray">Lorem ipsum dolor sit amet.</p>
-                    <div class="chart-holder">
-                      <canvas id="polarChartExample"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card mb-4">
-                  <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Radar chart Example</h2>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-3 text-gray">Lorem ipsum dolor sit amet.</p>
-                    <div class="chart-holder">
-                      <canvas id="radarChartExample"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+	<div class="container-fluid px-xl-5">
+		<!-- Cards -->
+		<section class="py-5">
+			<div class="row">
+				<div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+					<div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+						<div class="flex-grow-1 d-flex align-items-center">
+							<div class="dot mr-3 bg-violet"></div>
+							<div class="text">
+								<h6 class="mb-0">Matches</h6>
+								<span class="text-gray">1</span>
+							</div>
+						</div>
+						<div class="icon text-white bg-violet">
+							<i class="fas fa-futbol"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+					<div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+						<div class="flex-grow-1 d-flex align-items-center">
+							<div class="dot mr-3 bg-green"></div>
+							<div class="text">
+								<h6 class="mb-0">Tournaments</h6>
+								<span class="text-gray">1</span>
+							</div>
+						</div>
+						<div class="icon text-white bg-green">
+							<i class="fas fa-trophy"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+					<div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+						<div class="flex-grow-1 d-flex align-items-center">
+							<div class="dot mr-3 bg-blue"></div>
+							<div class="text">
+								<h6 class="mb-0">Players</h6>
+								<span class="text-gray">1</span>
+							</div>
+						</div>
+						<div class="icon text-white bg-blue">
+							<i class="fas fa-users"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+					<div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+						<div class="flex-grow-1 d-flex align-items-center">
+							<div class="dot mr-3 bg-red"></div>
+							<div class="text">
+								<h6 class="mb-0">Trainers</h6>
+								<span class="text-gray">1</span>
+							</div>
+						</div>
+						<div class="icon text-white bg-red">
+							<i class="fas fa-user-tie"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Calendar-->
+			<section class="py-5">
+
+				<div class="row">
+					<div class="col-xl-8 col-lg-8 mb-12 mb-xl-0">
+						<div class="card">
+							<div class="card-header">
+								<h6 class="text-uppercase mb-0">Calendar (<?php echo (date("Y, M")) ?>)</h6>
+							</div>
+							<div class="card-body">
+								<div class="flex-grow-1 d-flex align-items-center">
+									<?php $this->load->view('admin/calendar'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-4 col-lg-4 mb-12 mb-xl-0">
+						<div class="card">
+							<div class="card-header">
+								<h6 class="text-uppercase mb-0">Today Schedule</h6>
+							</div>
+							<div class="card-body">
+								<div class="flex-grow-1 d-flex align-items-center">
+									<?php $this->load->view('admin/day_block'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+			</section>
