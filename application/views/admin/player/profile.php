@@ -12,31 +12,31 @@
 								<h6>
 									User ID
 								</h6>
-								<?php echo ($player->userId) ?>
+								<?php echo $player->userId ?>
 							</p>
 							<p>
 								<h6>
 									Username
 								</h6>
-								<?php echo ($player->userName) ?>
+								<?php echo $player->userName ?>
 							</p>
 							<p>
 								<h6>
 									Status
 								</h6>
-								<?php echo ($player->accountStatus) ?>
+								<?php echo $player->accountStatus ?>
 							</p>
 							<p>
 								<h6>
 									Full name
 								</h6>
-								<?php echo ('Jane Doe') ?>
+								<?php echo $player->name ?>
 							</p>
 							<p>
 								<h6>
 									Position
 								</h6>
-								<?php echo ('Defence') ?>
+								<?php echo $player->position ?>
 							</p>
 						</div>
 					</div>

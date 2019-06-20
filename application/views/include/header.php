@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="all,follow" />
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo base_url("");?>/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url("/vendor/bootstrap/css/bootstrap.min.css");?>" />
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.0/css/all.css" crossorigin="anonymous" />
     <!-- Google fonts - Popppins for copy-->
