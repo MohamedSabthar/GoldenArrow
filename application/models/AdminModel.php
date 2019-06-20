@@ -241,23 +241,21 @@ class AdminModel extends CI_Model
         $this->db->replace('user', $userData);
 
         // add player specific data to playerData table
-        $trainerData = array(
-            'trainerId' => $userId,
+        $accountantData = array(
+            'accountantId' => $userId,
             'name' => $this->input->post('name'),
         );
 
-        $this->db->replace('trainerData', $trainerData);
+        $this->db->replace('accountantData', $accountantData);
     }
 
-
-
-    public function deleteTrainer($userId)
+    public function deleteAccountant($userId)
     {
         $this->db->where('userId', $userId);
         $this->db->delete('user');
 
-        $this->db->where('trainerId', $userId);
-        $this->db->delete('trainerData');
+        $this->db->where('accountantId', $userId);
+        $this->db->delete('accountantData');
     }
 /*
 public function getTourname nts()
