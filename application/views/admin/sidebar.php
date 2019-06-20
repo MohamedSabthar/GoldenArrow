@@ -38,5 +38,11 @@
 						<i class="fas fa-fw fa-user-tie  mr-3 text-gray"></i>
 						<span>Trainers</span></a>
 				</li>
+
+				<li class="sidebar-list-item">
+					<a href="<?echo base_url('index.php/adminController/viewAccountants')?>" class="sidebar-link text-muted <?if (strcmp($active, 'accountants')==0) echo 'active'?>">
+						<i class="fas fa-fw fa-file-invoice-dollar mr-3 text-gray"></i>
+						<span>Accountants</span></a>
+				</li>
 			</ul>
 		</div>
