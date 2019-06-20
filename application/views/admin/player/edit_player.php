@@ -29,8 +29,8 @@
 									<label class="col-md-3 form-control-label">Status</label>
 									<div class="col-md-9">
 										<select name="accountStatus" class="form-control">
-											<option <?php if ($player->userId == 1) echo 'selected' ?> value='1'>Active</option>
-									<option <?php if ($player->userId == 0) echo 'selected' ?> value='0'>Blocked</option>
+											<option <?php if ($player->accountStatus == 1) echo 'selected' ?> value='1'>Active</option>
+									<option <?php if ($player->accountStatus == 0) echo 'selected' ?> value='0'>Blocked</option>
 									</select>
 								</div>
 							</div>
@@ -46,10 +46,10 @@
 									<label class="col-md-3 form-control-label">Position</label>
 									<div class="col-md-9">
 										<select name="position" class="form-control">
-											<option <?php if (strcmp($player->userId, 'Attacker')) echo 'selected' ?> >Attacker</option>
-											<option <?php if (strcmp($player->userId, 'Mid-fielder')) echo 'selected' ?> >Mid-fielder</option>
-											<option <?php if (strcmp($player->userId, 'Defender')) echo 'selected' ?> >Defender</option>
-											<option <?php if (strcmp($player->userId, 'Goal-keeper')) echo 'selected' ?> >Goal-keeper</option>
+											<option <?php if (strcmp($player->position, 'Attacker')==0) echo 'selected' ?> >Attacker</option>
+											<option <?php if (strcmp($player->position, 'Mid-fielder')==0) echo 'selected' ?> >Mid-fielder</option>
+											<option <?php if (strcmp($player->position, 'Defender')==0) echo 'selected' ?> >Defender</option>
+											<option <?php if (strcmp($player->position, 'Goal-keeper')==0) echo 'selected' ?> >Goal-keeper</option>
 										</select>
 									</div>
 								</div>

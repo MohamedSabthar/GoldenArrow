@@ -5,11 +5,11 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 mb-4">
 					<div class="card">
 						<div class="card-header">
-							<h6 class="text-uppercase mb-0">Success!</h6>
+							<h6 class="text-uppercase mb-0">Confirm deletion</h6>
 						</div>
 						<div class='card-body'>
-							<?= $text ?><p><br>
-							<a href='<?= $redirect ?>' class='btn btn-success'>OK</a>
+							Do you really want to delete <?= $player->name ?>?<p><br>
+							<a href='<?=base_url("index.php/AdminController/deletePlayerConfirmed/$player->userId") ?>' class='btn btn-success'>Delete</a>
 						</div>
 					</div>
 				</div>

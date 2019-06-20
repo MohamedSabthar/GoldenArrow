@@ -81,10 +81,17 @@ class AdminModel extends CI_Model
     }
 
 
-    /*
-public function deletePlayer($userId)
-{ }
 
+    public function deletePlayer($userId)
+    { 
+        $this->db->where('userId', $userId);
+        $this->db->delete('user');
+
+        $this->db->where('playerId', $userId);
+        $this->db->delete('playerData');
+    }
+
+    /*
 public function getTrainers()
 {
     $query = $this->db->get_where('user', array('userRole' => 'trainer'));

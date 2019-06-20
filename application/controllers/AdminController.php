@@ -233,40 +233,11 @@ class AdminController extends CI_Controller
         }
     }
 
-    public function deletePlayer($userId)
+    public function deletePlayerConfirmed($userId)
     {
-        $data['title'] = 'Edit Tournament';
-
-        $this->load->model('TournamentModel');
-        $data['query'] = $this->TournamentModel->getTournament($id);
-
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('place', 'Place', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
-        $this->form_validation->set_rules('opposing_teams', 'Opposing teams', 'required');
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('header', $data);
-            $this->load->view('nav');
-            $this->load->view('edit_tournament', $data);
-            $this->load->view('footer');
-        } else {
-            $this->TournamentModel->editTournament($id);
-
-            $data['message'] = "Tournament updated successfully!";
-
-            $this->load->view('header', $data);
-            $this->load->view('nav');
-            $this->load->view('success', $data);
-            $this->load->view('footer');
-        }
-        //ex
-        $this->load->model('AdminModel');
-        $data['player'] = $this->AdminModel->getPlayer($userId);
-
-        //setting header
+        //  header
         $header = array(
-            "title" => "Administrator",
+            "title" => "Delete Player",
             "dashboardTitle" => "Administrator Dashboard",
             "userName" => "Administrator Name",
             "userRole" => "Administrator"
@@ -274,11 +245,51 @@ class AdminController extends CI_Controller
 
         $data['active'] = 'none';
 
-        //loding views
+        $this->load->model('AdminModel');
+        $data['player'] = $this->AdminModel->deletePlayer($userId);
+
+        $message['text'] = 'Player was deleted successfully';
+        $message['redirect'] = base_url('index.php/AdminController/viewPlayers');
+
         $this->load->view('include/header', $header);
         $this->load->view('admin/sidebar', $data);
-        $this->load->view("admin/player/edit_player", $data);
+        $this->load->view('admin/message', $message);
         $this->load->view('include/footer');
+    }
+
+    public function deletePlayer($userId)
+    {
+        //  header
+        $header = array(
+            "title" => "Delete Player",
+            "dashboardTitle" => "Administrator Dashboard",
+            "userName" => "Administrator Name",
+            "userRole" => "Administrator"
+        );
+
+        // sidebar
+        $data['active'] = 'none';
+
+        // gather existing data
+        $this->load->model('AdminModel');
+        $data['player'] = $this->AdminModel->getPlayer($userId);
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/player/delete_player', $data);
+            $this->load->view('include/footer');
+        } else {
+            $this->AdminModel->editPlayer($userId);
+
+            $message['text'] = 'Player was deleted successfully';
+            $message['redirect'] = base_url('index.php/AdminController/viewPlayers');
+
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/message', $message);
+            $this->load->view('include/footer');
+        }
     }
 
     public function viewTrainers()
