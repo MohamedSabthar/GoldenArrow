@@ -294,7 +294,7 @@ class AdminController extends CI_Controller
 
     public function viewTrainers()
     {
-        //setting header
+        // header
         $header = array(
             "title" => "Administrator",
             "dashboardTitle" => "Administrator Dashboard",
@@ -302,19 +302,177 @@ class AdminController extends CI_Controller
             "userRole" => "Administrator"
         );
 
+        // sidebar
         $data['active'] = 'trainers';
 
+        // retrieve data
         $this->load->model('AdminModel');
-        $data['players'] = $this->AdminModel->getPlayers();
         $data['trainers'] = $this->AdminModel->getTrainers();
-        $data['tournaments'] = $this->AdminModel->getPlayers();
-        $data['matches'] = $this->AdminModel->getPlayers();
 
-        //loding views
+        // load views
         $this->load->view('include/header', $header);
         $this->load->view('admin/sidebar', $data);
-        //$this->load->view('admin/home', $data);
+        $this->load->view('admin/trainer/view_trainers', $data);
         $this->load->view('include/footer');
+    }
+
+    public function viewTrainer($userId)
+    {
+        // retrieve data
+        $this->load->model('AdminModel');
+        $data['trainer'] = $this->AdminModel->getTrainer($userId);
+
+        // header
+        $trainerName = $data['trainer']->name;
+        $header = array(
+            "title" => $trainerName,
+            "dashboardTitle" => "Administrator Dashboard",
+            "userName" => "Administrator Name",
+            "userRole" => "Administrator"
+        );
+
+        // sidebar
+        $data['active'] = 'none';
+
+        // loading views
+        $this->load->view('include/header', $header);
+        $this->load->view('admin/sidebar', $data);
+        $this->load->view("admin/trainer/profile", $data);
+        $this->load->view('include/footer');
+    }
+
+    public function addTrainer()
+    {
+        //  header
+        $header = array(
+            "title" => "Add Trainer",
+            "dashboardTitle" => "Administrator Dashboard",
+            "userName" => "Administrator Name",
+            "userRole" => "Administrator"
+        );
+
+        // sidebar
+        $data['active'] = 'none';
+
+        $this->form_validation->set_rules('userName', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/trainer/add_trainer');
+            $this->load->view('include/footer');
+        } else {
+            $this->load->model('AdminModel');
+            $this->AdminModel->addTrainer();
+
+            $message['text'] = 'Trainer was addedd successfully';
+            $message['redirect'] = base_url('index.php/AdminController/viewTrainers');
+
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/message', $message);
+            $this->load->view('include/footer');
+        }
+    }
+
+    public function editTrainer($userId)
+    {
+        //  header
+        $header = array(
+            "title" => "Edit Trainer",
+            "dashboardTitle" => "Administrator Dashboard",
+            "userName" => "Administrator Name",
+            "userRole" => "Administrator"
+        );
+
+        // sidebar
+        $data['active'] = 'none';
+
+        // gather existing data
+        $this->load->model('AdminModel');
+        $data['trainer'] = $this->AdminModel->getTrainer($userId);
+
+        $this->form_validation->set_rules('userName', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/trainer/edit_trainer', $data);
+            $this->load->view('include/footer');
+        } else {
+            $this->AdminModel->editTrainer($userId);
+
+            $message['text'] = 'Trainer was updated successfully';
+            $message['redirect'] = base_url('index.php/AdminController/viewTrainers');
+
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/message', $message);
+            $this->load->view('include/footer');
+        }
+    }
+
+    public function deleteTrainerConfirmed($userId)
+    {
+        //  header
+        $header = array(
+            "title" => "Delete Player",
+            "dashboardTitle" => "Administrator Dashboard",
+            "userName" => "Administrator Name",
+            "userRole" => "Administrator"
+        );
+
+        $data['active'] = 'none';
+
+        $this->load->model('AdminModel');
+        $data['trainer'] = $this->AdminModel->deleteTrainer($userId);
+
+        $message['text'] = 'Trainer was deleted successfully';
+        $message['redirect'] = base_url('index.php/AdminController/viewTrainers');
+
+        $this->load->view('include/header', $header);
+        $this->load->view('admin/sidebar', $data);
+        $this->load->view('admin/message', $message);
+        $this->load->view('include/footer');
+    }
+
+    public function deleteTrainer($userId)
+    {
+        //  header
+        $header = array(
+            "title" => "Delete Trainer",
+            "dashboardTitle" => "Administrator Dashboard",
+            "userName" => "Administrator Name",
+            "userRole" => "Administrator"
+        );
+
+        // sidebar
+        $data['active'] = 'none';
+
+        // gather existing data
+        $this->load->model('AdminModel');
+        $data['trainer'] = $this->AdminModel->getTrainer($userId);
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/trainer/delete_trainer', $data);
+            $this->load->view('include/footer');
+        } else {
+            $this->AdminModel->editTrainer($userId);
+
+            $message['text'] = 'Trainer was deleted successfully';
+            $message['redirect'] = base_url('index.php/AdminController/viewTrainers');
+
+            $this->load->view('include/header', $header);
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/message', $message);
+            $this->load->view('include/footer');
+        }
     }
 
     public function dayView($year, $month, $day)
