@@ -21,7 +21,7 @@
                         <span>Players Payment</span></a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link text-muted">
+                    <a href="/accountant/trainers" class="sidebar-link text-muted">
                         <i class="far fa-credit-card  mr-3 text-gray"></i>
                         <span>Trainers Salary</span></a>
                 </li>

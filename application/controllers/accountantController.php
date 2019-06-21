@@ -6,7 +6,6 @@ class AccountantController extends CI_Controller
     {
         parent::__construct();
         $this->data = array();
-        $this->load->library("pagination");
     }
 
 
@@ -116,8 +115,8 @@ class AccountantController extends CI_Controller
         $this->pagination->initialize($config);
         $this->load->model('AccountantModel');
         $config["total_rows"] = $this->AccountantModel->numberOfPlayers();
-        $config["per_page"] = 4;
-        $config["uri_segment"] = 3;
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 2;
         $config['page_query_string'] = false;
         $config['query_string_segment'] = '';
         $config['full_tag_open'] = '<ul class="pagination pagination-sm" style="font-size:1.1em">';
