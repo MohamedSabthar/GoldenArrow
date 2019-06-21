@@ -2,6 +2,151 @@
 
 class AdminModel extends CI_Model
 {
+    public function getTournaments()
+    {
+        $this->db->select('*');
+        $this->db->from('tournament');
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function getTournament($tournamentId)
+    {
+        $this->db->select('');
+        $this->db->from('tournament');
+        $this->db->where('tournamentId', $tournamentId);
+
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    public function addTournament()
+    {
+        // init user
+        $tournamentData = array(
+            'name' => $this->input->post('name'),
+            'place' => $this->input->post('place'),
+        );
+
+        $this->db->insert('tournament', $tournamentData);
+    }
+
+    public function editTournament($tournamentId)
+    {
+        // init user
+        $tournamentData = array(
+            'tournamentId' => $tournamentId,
+            'name' => $this->input->post('name'),
+            'place' => $this->input->post('place'),
+        );
+
+        $this->db->replace('tournament', $tournamentData);
+    }
+
+    public function deleteTournament($tournamentId)
+    {
+        $this->db->where('tournamentId', $tournamentId);
+        $this->db->delete('tournament');
+    }
+
+
+
+    public function getMatches()
+    {
+        $this->db->select('*');
+        $this->db->from('matchData');
+        $this->db->join('tournament', 'matchData.tId = tournament.tournamentId');
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function getMatch($matchId)
+    {
+        $this->db->select('*');
+        $this->db->from('matchData');
+        //$this->db->where('userRole', 'player');
+        $this->db->where('matchId', $matchId);
+        $this->db->join('tournament', 'matchData.tId = tournament.tournamentId');
+
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    public function getTournamentMatches($tournamentId) {
+        $this->db->select('*');
+        $this->db->from('matchData');
+        $this->db->where('tId', $tournamentId);
+        $this->db->join('tournament', 'matchData.tId = tournament.tournamentId');
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function addMatch()
+    {
+        // init user
+        $matchData = array(
+            'tId' => $this->input->post('tournamentId'),
+            'name' => $this->input->post('name'),
+            'location' => $this->input->post('location'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time'),
+            'played' => $this->input->post('played'),
+        );
+
+        if ($this->input->post('played')==1) {
+            $matchData += array(
+                'score' => $this->input->post('score'),
+                'scoreOpponent' => $this->input->post('opponent'),
+            );
+        }
+
+        $this->db->insert('matchData', $matchData);
+
+        // get userId of player record
+        $query = $this->db->get_where('matchData', $matchData);
+        $result = $query->row();
+    }
+
+    public function editMatch($matchId)
+    {
+        // init user
+               // init user
+               $matchData = array(
+                'tId' => $this->input->post('tournamentId'),
+                'name' => $this->input->post('name'),
+                'location' => $this->input->post('location'),
+                'date' => $this->input->post('date'),
+                'time' => $this->input->post('time'),
+                'played' => $this->input->post('played'),
+            );
+    
+            if ($this->input->post('played')==1) {
+                $matchData += array(
+                    'score' => $this->input->post('score'),
+                    'scoreOpponent' => $this->input->post('opponent'),
+                );
+            }
+        $this->db->replace('matchData', $matchData);
+    }
+
+    public function deleteMatch($matchId)
+    {
+        $this->db->where('matchId', $matchId);
+        $this->db->delete('matchData');
+    }
+
+
+
+
+
+
     public function getPlayers()
     {
         $this->db->select('*');
@@ -88,6 +233,8 @@ class AdminModel extends CI_Model
         $this->db->where('playerId', $userId);
         $this->db->delete('playerData');
     }
+
+
 
     public function getTrainers()
     {
@@ -180,7 +327,7 @@ class AdminModel extends CI_Model
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('userRole', 'accountant');
-        $this->db->join('trainerData', 'user.userId = accountantData.accountantId');
+        $this->db->join('accountantData', 'user.userId = accountantData.accountantId');
 
         //$query = $this->db->get_where('user', array('userRole' => 'player'));
         $query = $this->db->get();
@@ -220,7 +367,7 @@ class AdminModel extends CI_Model
 
         // add player specific data to playerData table
         $accountantData = array(
-            'accontantId' => $result->userId,
+            'accountantId' => $result->userId,
             'name' => $this->input->post('name'),
         );
 
