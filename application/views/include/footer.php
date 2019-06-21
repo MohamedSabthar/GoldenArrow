@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">Golden Arrow</p>
+                <p class="mb-2 mb-md-0">GoldenArrow</p>
             </div>
             <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">
@@ -19,14 +19,14 @@
 </div>
 </div>
 <!-- JavaScript files-->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/popper.js/umd/popper.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="/vendor/jquery.cookie/jquery.cookie.js"></script>
+<script src="<?php echo base_url("/vendor/jquery/jquery.min.js");?>"></script>
+<script src="<?php echo base_url("/vendor/popper.js/umd/popper.min.js");?>"></script>
+<script src="<?php echo base_url("/vendor/bootstrap/js/bootstrap.min.js");?>"></script>
+<script src="<?php echo base_url("/vendor/jquery.cookie/jquery.cookie.js");?>"></script>
 <!-- <script src="/vendor/chart.js/Chart.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <!-- <script src="/js/charts-home.js"></script> -->
-<script src="/js/front.js"></script>
+<script src="<?php echo base_url("/js/front.js");?>"></script>
 
 </body>
 
