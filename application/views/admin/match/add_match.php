@@ -21,35 +21,35 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Name</label>
 								<div class="col-md-9">
-									<input type="text" name='name' class="form-control">
+									<input type="text" name='matchName' class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Location</label>
 								<div class="col-md-9">
-									<input type="text" name='location' class="form-control">
+									<input type="text" name='matchLocation' class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Date</label>
 								<div class="col-md-9">
-									<input type="date" name='date' class="form-control">
+									<input type="date" name='matchDate' class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Time</label>
 								<div class="col-md-9">
-									<input type="time" name='time' class="form-control">
+									<input type="time" name='matchTime' class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Played</label>
 								<div class="col-md-9">
-									<select name="played" class="form-control">
+									<select name="matchPlayed" class="form-control">
 										<option value='1'>Yes</option>
 										<option value='0'>No</option>
 									</select> </div>
@@ -58,18 +58,17 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Score</label>
 								<div class="col-md-9">
-									<input type="text" name='score' class="form-control">
+									<input type="text" name='matchScore' class="form-control">
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Opponent score</label>
 								<div class="col-md-9">
-									<input type="text" name='scoreOpponent' class="form-control">
+									<input type="text" name='matchScoreOpponent' class="form-control">
 								</div>
 							</div>
-
-
+							
 							<div class="line"></div>
 							<div class="form-group row">
 								<div class="col-md-9 ml-auto">

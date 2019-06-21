@@ -28,7 +28,7 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Name</label>
 								<div class="col-md-9">
-									<input type="text" name='name' class="form-control" value='<?php echo $accountant->name ?>''>
+									<input type="text" name='accountantName' class="form-control" value='<?php echo $accountant->accountantName ?>''>
 									</div>
 								</div>
 

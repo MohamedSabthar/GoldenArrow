@@ -26,8 +26,8 @@
 										$deleteUrl = base_url("index.php/AdminController/deleteTournament/$row->tournamentId");
 										echo '<tr>';
 										echo "<th scope='row'>$row->tournamentId</th>";
-										echo "<td>$row->name</td>";
-										echo "<td>$row->place</td>";
+										echo "<td>$row->tournamentName</td>";
+										echo "<td>$row->tournamentPlace</td>";
 										echo "<td style='text-align: right'><a class='btn btn-primary' href='$profileUrl'>Profile</a>&nbsp<a class='btn btn-warning' href='$editUrl'>Edit</a>&nbsp<a class='btn btn-danger' href='$deleteUrl'>Delete</a></td>";
 										echo '</tr>';
 									}

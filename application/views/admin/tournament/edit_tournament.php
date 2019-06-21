@@ -15,14 +15,14 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Name</label>
 								<div class="col-md-9">
-									<input type="text" name='name' class="form-control" value='<?php echo $tournament->name ?>''>
+									<input type="text" name='tournamentName' class="form-control" value='<?php echo $tournament->tournamentName ?>''>
 								</div>
 							</div>
 							
 							<div class="form-group row">
 							<label class="col-md-3 form-control-label">Place</label>
 								<div class="col-md-9">
-									<input type="text" name='place' class="form-control" value='<?php echo $tournament->place ?>''>
+									<input type="text" name='tournamentPlace' class="form-control" value='<?php echo $tournament->tournamentPlace ?>''>
 								</div>
 							</div>
 

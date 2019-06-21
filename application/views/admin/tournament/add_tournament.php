@@ -14,7 +14,7 @@
 								<div class="form-group row">
 									<label class="col-md-3 form-control-label">Name</label>
 									<div class="col-md-9">
-										<input type="text" name='name' class="form-control">
+										<input type="text" name='tournamentName' class="form-control">
 									</div>
 								</div>
 
@@ -22,7 +22,7 @@
 								<div class="form-group row">
 									<label class="col-md-3 form-control-label">Place</label>
 									<div class="col-md-9">
-										<input type="text" name='place' class="form-control">
+										<input type="text" name='tournamentPlace' class="form-control">
 									</div>
 								</div>
 

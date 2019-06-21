@@ -34,8 +34,8 @@
 										} else {
 											echo "<td>Blocked</td>";
 										}
-										echo "<td>$row->name</td>";
-										echo "<td>$row->position</td>";
+										echo "<td>$row->playerName</td>";
+										echo "<td>$row->playerPosition</td>";
 										echo "<td style='text-align: right'><a class='btn btn-primary' href='$profileUrl'>Profile</a>&nbsp<a class='btn btn-warning' href='$editUrl'>Edit</a>&nbsp<a class='btn btn-danger' href='$deleteUrl'>Delete</a></td>";
 										echo '</tr>';
 									}

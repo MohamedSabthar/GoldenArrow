@@ -30,13 +30,13 @@
 								<h6>
 									Full name
 								</h6>
-								<?php echo $player->name ?>
+								<?php echo $player->playerName ?>
 							</p>
 							<p>
 								<h6>
 									Position
 								</h6>
-								<?php echo $player->position ?>
+								<?php echo $player->playerPosition ?>
 							</p>
 						</div>
 					</div>

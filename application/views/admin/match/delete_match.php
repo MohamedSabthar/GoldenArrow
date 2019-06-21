@@ -8,8 +8,8 @@
 							<h6 class="text-uppercase mb-0">Confirm deletion</h6>
 						</div>
 						<div class='card-body'>
-							Do you really want to delete <?= $accountant->accountantName ?>?<p><br>
-							<a href='<?=base_url("index.php/AdminController/deleteAccountantConfirmed/$accountant->userId") ?>' class='btn btn-success'>Delete</a>
+							Do you really want to delete <?= $match->matchName ?>?<p><br>
+							<a href='<?=base_url("index.php/AdminController/deleteMatchConfirmed/$match->matchId") ?>' class='btn btn-success'>Delete</a>
 						</div>
 					</div>
 				</div>

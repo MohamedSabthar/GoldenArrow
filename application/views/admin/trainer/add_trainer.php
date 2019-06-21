@@ -28,7 +28,7 @@
 								<div class="form-group row">
 									<label class="col-md-3 form-control-label">Name</label>
 									<div class="col-md-9">
-										<input type="text" name='name' class="form-control">
+										<input type="text" name='trainerName' class="form-control">
 									</div>
 								</div>
 

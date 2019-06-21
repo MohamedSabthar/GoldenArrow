@@ -38,18 +38,18 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Name</label>
 								<div class="col-md-9">
-									<input type="text" name='name' class="form-control" value='<?php echo $player->name ?>''>
+									<input type="text" name='playerName' class="form-control" value='<?php echo $player->playerName ?>''>
 									</div>
 								</div>
 
 								<div class="form-group row">
 									<label class="col-md-3 form-control-label">Position</label>
 									<div class="col-md-9">
-										<select name="position" class="form-control">
-											<option <?php if (strcmp($player->position, 'Attacker')==0) echo 'selected' ?> >Attacker</option>
-											<option <?php if (strcmp($player->position, 'Mid-fielder')==0) echo 'selected' ?> >Mid-fielder</option>
-											<option <?php if (strcmp($player->position, 'Defender')==0) echo 'selected' ?> >Defender</option>
-											<option <?php if (strcmp($player->position, 'Goal-keeper')==0) echo 'selected' ?> >Goal-keeper</option>
+										<select name="playerPosition" class="form-control">
+											<option <?php if (strcmp($player->playerPosition, 'Attacker')==0) echo 'selected' ?> >Attacker</option>
+											<option <?php if (strcmp($player->playerPosition, 'Mid-fielder')==0) echo 'selected' ?> >Mid-fielder</option>
+											<option <?php if (strcmp($player->playerPosition, 'Defender')==0) echo 'selected' ?> >Defender</option>
+											<option <?php if (strcmp($player->playerPosition, 'Goal-keeper')==0) echo 'selected' ?> >Goal-keeper</option>
 										</select>
 									</div>
 								</div>

@@ -5,7 +5,6 @@ class AdminController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library("pagination");
     }
 
     public function index()
@@ -23,9 +22,11 @@ class AdminController extends CI_Controller
         // sidebar
         $data['active'] = 'dashboard';
 
+        // current date for today schedule
+        $date = date("Y-m-d");
+
         // retrieve data
-        $data['tournaments'] = $this->AdminModel->getPlayers();
-        $data['matches'] = $this->AdminModel->getPlayers();
+        $data['matches'] = $this->AdminModel->getDateMatches($date);
 
         $data['matchCount'] = $this->AdminModel->getMatchCount();
         $data['tournamentCount'] = $this->AdminModel->getTournamentCount();
@@ -41,34 +42,14 @@ class AdminController extends CI_Controller
 
     public function viewPracticeSessions()
     {
-        //setting header
-        $header = array(
-            "title" => "Practice Sessions",
-            "dashboardTitle" => "Administrator Dashboard",
-            "userName" => "Administrator Name",
-            "userRole" => "Administrator"
-        );
-
-        $data['active'] = 'practice_sessions';
-
-        $this->load->model('AdminModel');
-        $data['players'] = $this->AdminModel->getPlayers();
-        $data['trainers'] = $this->AdminModel->getTrainers();
-        $data['tournaments'] = $this->AdminModel->getPlayers();
-        $data['matches'] = $this->AdminModel->getPlayers();
-
-        //loding views
-        $this->load->view('include/header', $header);
-        $this->load->view('admin/sidebar', $data);
-        //$this->load->view('admin/home', $data);
-        $this->load->view('include/footer');
-    }
+        // to be implemented by another team member
+     }
 
     public function viewMatches()
     {
         // header
         $header = array(
-            "title" => "Administrator",
+            "title" => "Matches",
             "dashboardTitle" => "Administrator Dashboard",
             "userName" => "Administrator Name",
             "userRole" => "Administrator"
@@ -101,22 +82,26 @@ class AdminController extends CI_Controller
         // sidebar
         $data['active'] = 'none';
 
+        // validation rules
         $this->form_validation->set_rules('tournamentId', 'Tournament ID', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('location', 'Location', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
-        $this->form_validation->set_rules('time', 'Time', 'required');
-        $this->form_validation->set_rules('played', 'Played', 'required');
+        $this->form_validation->set_rules('matchName', 'Name', 'required');
+        $this->form_validation->set_rules('matchLocation', 'Location', 'required');
+        $this->form_validation->set_rules('matchDate', 'Date', 'required');
+        $this->form_validation->set_rules('matchTime', 'Time', 'required');
+        $this->form_validation->set_rules('matchPlayed', 'Played', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            // form not submitted
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/match/add_match');
             $this->load->view('include/footer');
         } else {
+            //form submitted
             $this->load->model('AdminModel');
             $this->AdminModel->addMatch();
 
+            // feedback
             $message['text'] = 'Match was addedd successfully';
             $message['redirect'] = base_url('index.php/AdminController/viewMatches');
 
@@ -143,17 +128,18 @@ class AdminController extends CI_Controller
         // gather existing data
         $this->load->model('AdminModel');
         $data['match'] = $this->AdminModel->getMatch($matchId);
-        
 
-
+        // set validation rules
         $this->form_validation->set_rules('tournamentId', 'Tournament ID', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('location', 'Location', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
-        $this->form_validation->set_rules('time', 'Time', 'required');
-        $this->form_validation->set_rules('played', 'Played', 'required');
+        $this->form_validation->set_rules('matchName', 'Name', 'required');
+        $this->form_validation->set_rules('matchLocation', 'Location', 'required');
+        $this->form_validation->set_rules('matchDate', 'Date', 'required');
+        $this->form_validation->set_rules('matchTime', 'Time', 'required');
+        $this->form_validation->set_rules('matchPlayed', 'Played', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            // form not submitted
+            // display form
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/match/edit_match', $data);
@@ -181,8 +167,10 @@ class AdminController extends CI_Controller
             "userRole" => "Administrator"
         );
 
+        // sidebar
         $data['active'] = 'none';
 
+        // execute delete functions
         $this->load->model('AdminModel');
         $data['match'] = $this->AdminModel->deleteMatch($matchId);
 
@@ -210,7 +198,7 @@ class AdminController extends CI_Controller
 
         // gather existing data
         $this->load->model('AdminModel');
-        $data['accountant'] = $this->AdminModel->getMatch($matchId);
+        $data['match'] = $this->AdminModel->getMatch($matchId);
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('include/header', $header);
@@ -234,7 +222,7 @@ class AdminController extends CI_Controller
     {
         // header
         $header = array(
-            "title" => "Administrator",
+            "title" => "Tournaments",
             "dashboardTitle" => "Administrator Dashboard",
             "userName" => "Administrator Name",
             "userRole" => "Administrator"
@@ -262,7 +250,7 @@ class AdminController extends CI_Controller
         $data['matches'] = $this->AdminModel->getTournamentMatches($tournamentId);
 
         // header
-        $tournamentName = $data['tournament']->name;
+        $tournamentName = $data['tournament']->tournamentName;
         $header = array(
             "title" => $tournamentName,
             "dashboardTitle" => "Administrator Dashboard",
@@ -293,10 +281,12 @@ class AdminController extends CI_Controller
         // sidebar
         $data['active'] = 'none';
 
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('place', 'Place', 'required');
+        // set validation rules
+        $this->form_validation->set_rules('tournamentName', 'Name', 'required');
+        $this->form_validation->set_rules('tournamentPlace', 'Place', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            // form is nnot submitted
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/tournament/add_tournament');
@@ -305,7 +295,8 @@ class AdminController extends CI_Controller
             $this->load->model('AdminModel');
             $this->AdminModel->addTournament();
 
-            $message['text'] = 'Tournament was addedd successfully';
+            // feedback
+            $message['text'] = 'Tournament was added successfully';
             $message['redirect'] = base_url('index.php/AdminController/viewTournaments');
 
             $this->load->view('include/header', $header);
@@ -332,15 +323,18 @@ class AdminController extends CI_Controller
         $this->load->model('AdminModel');
         $data['tournament'] = $this->AdminModel->getTournament($tournamentId);
 
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('place', 'place', 'required');
+        // set validation rules
+        $this->form_validation->set_rules('tournamentName', 'Name', 'required');
+        $this->form_validation->set_rules('tournamentPlace', 'place', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            // form is not submitted
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/tournament/edit_tournament', $data);
             $this->load->view('include/footer');
         } else {
+            // submitted
             $this->AdminModel->editTournament($tournamentId);
 
             $message['text'] = 'Tournament was updated successfully';
@@ -363,21 +357,25 @@ class AdminController extends CI_Controller
             "userRole" => "Administrator"
         );
 
+        // sidebar
         $data['active'] = 'none';
 
+        // execute functions
         $this->load->model('AdminModel');
-        $data['tournament'] = $this->AdminModel->deletePlayer($tournamentId);
+        $data['tournament'] = $this->AdminModel->deleteTournament($tournamentId);
 
+        // feedback
         $message['text'] = 'Tournament was deleted successfully';
         $message['redirect'] = base_url('index.php/AdminController/viewTournaments');
 
+        // load message
         $this->load->view('include/header', $header);
         $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/message', $message);
         $this->load->view('include/footer');
     }
 
-    public function deleteTournaments($tournamentId)
+    public function deleteTournament($tournamentId)
     {
         //  header
         $header = array(
@@ -392,14 +390,16 @@ class AdminController extends CI_Controller
 
         // gather existing data
         $this->load->model('AdminModel');
-        $data['tournament'] = $this->AdminModel->getPlayer($tournamentId);
+        $data['tournament'] = $this->AdminModel->getTournament($tournamentId);
 
         if ($this->form_validation->run() == FALSE) {
+            // form is not run
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);
-            $this->load->view('admin/player/delete_tournament', $data);
+            $this->load->view('admin/tournament/delete_tournament', $tournamentId);
             $this->load->view('include/footer');
         } else {
+            // form submitted
             $this->AdminModel->deleteTournament($tournamentId);
 
             $message['text'] = 'Tournament was deleted successfully';
@@ -475,19 +475,24 @@ class AdminController extends CI_Controller
         // sidebar
         $data['active'] = 'none';
 
+        // set validation rules
         $this->form_validation->set_rules('userName', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('playerName', 'Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            // form is not submitted
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/player/add_player');
             $this->load->view('include/footer');
         } else {
+            // form is submitted
+            // execute functions
             $this->load->model('AdminModel');
             $this->AdminModel->addPlayer();
-
+            
+            // feedback
             $message['text'] = 'Player was addedd successfully';
             $message['redirect'] = base_url('index.php/AdminController/viewPlayers');
 
@@ -517,7 +522,7 @@ class AdminController extends CI_Controller
 
         $this->form_validation->set_rules('userName', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('playerName', 'Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('include/header', $header);
@@ -600,7 +605,7 @@ class AdminController extends CI_Controller
     {
         // header
         $header = array(
-            "title" => "Administrator",
+            "title" => "Trainers",
             "dashboardTitle" => "Administrator Dashboard",
             "userName" => "Administrator Name",
             "userRole" => "Administrator"
@@ -660,7 +665,7 @@ class AdminController extends CI_Controller
 
         $this->form_validation->set_rules('userName', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('trainerName', 'Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('include/header', $header);
@@ -700,7 +705,7 @@ class AdminController extends CI_Controller
 
         $this->form_validation->set_rules('userName', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('trainerName', 'Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('include/header', $header);
@@ -850,7 +855,7 @@ class AdminController extends CI_Controller
 
         $this->form_validation->set_rules('userName', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('accountantName', 'Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('include/header', $header);
@@ -890,7 +895,7 @@ class AdminController extends CI_Controller
 
         $this->form_validation->set_rules('userName', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('accountantName', 'Name', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('include/header', $header);
@@ -979,10 +984,15 @@ class AdminController extends CI_Controller
             "userRole" => "Administrator"
         );
         $data['active'] = 'none';
+        $data['date'] = "$year-$month-$day";
+
+        $this->load->model('AdminModel');
+        $data['matches'] = $this->AdminModel->getDateMatches("$year-$month-$day");
+
         //loding views
         $this->load->view('include/header', $header);
         $this->load->view('admin/sidebar', $data);
-        //$this->load->view('admin/home', $data);
+        $this->load->view('admin/day', $data);
         $this->load->view('include/footer');
     }
 }

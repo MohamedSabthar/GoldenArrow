@@ -37,14 +37,14 @@
 								<div class="form-group row">
 									<label class="col-md-3 form-control-label">Name</label>
 									<div class="col-md-9">
-										<input type="text" name='name' class="form-control">
+										<input type="text" name='playerName' class="form-control">
 									</div>
 								</div>
 
 								<div class="form-group row">
 									<label class="col-md-3 form-control-label">Position</label>
 									<div class="col-md-9">
-										<select name="position" class="form-control">
+										<select name="playerPosition" class="form-control">
 											<option>Attacker</option>
 											<option>Mid-fielder</option>
 											<option>Defender</option>

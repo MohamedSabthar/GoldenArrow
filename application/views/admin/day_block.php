@@ -1,1 +1,0 @@
-No practise sessions or matches today.

@@ -8,7 +8,7 @@
 							<h6 class="text-uppercase mb-0">Confirm deletion</h6>
 						</div>
 						<div class='card-body'>
-							Do you really want to delete <?= $player->name ?>?<p><br>
+							Do you really want to delete <?= $player->playerName ?>?<p><br>
 							<a href='<?=base_url("index.php/AdminController/deletePlayerConfirmed/$player->userId") ?>' class='btn btn-success'>Delete</a>
 						</div>
 					</div>

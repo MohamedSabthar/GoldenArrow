@@ -9,7 +9,7 @@
 							<div class="dot mr-3 bg-violet"></div>
 							<div class="text">
 								<h6 class="mb-0">Matches</h6>
-								<span class="text-gray"><?=$matchCount?></span>
+								<span class="text-gray"><?= $matchCount ?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-violet">
@@ -23,7 +23,7 @@
 							<div class="dot mr-3 bg-green"></div>
 							<div class="text">
 								<h6 class="mb-0">Tournaments</h6>
-								<span class="text-gray"><?=$tournamentCount?></span>
+								<span class="text-gray"><?= $tournamentCount ?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-green">
@@ -37,7 +37,7 @@
 							<div class="dot mr-3 bg-blue"></div>
 							<div class="text">
 								<h6 class="mb-0">Players</h6>
-								<span class="text-gray"><?=$playerCount?></span>
+								<span class="text-gray"><?= $playerCount ?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-blue">
@@ -51,7 +51,7 @@
 							<div class="dot mr-3 bg-red"></div>
 							<div class="text">
 								<h6 class="mb-0">Trainers</h6>
-								<span class="text-gray"><?=$trainerCount?></span>
+								<span class="text-gray"><?= $trainerCount ?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-red">
@@ -81,12 +81,28 @@
 					<div class="col-xl-4 col-lg-4 mb-12 mb-xl-0">
 						<div class="card">
 							<div class="card-header">
-								<h6 class="text-uppercase mb-0">Today Schedule</h6>
+								<h6 class="text-uppercase mb-0">Schedule</h6>
 							</div>
 							<div class="card-body">
-								<div class="flex-grow-1 d-flex align-items-center">
-									<?php $this->load->view('admin/day_block'); ?>
-								</div>
+									<?php
+									if (empty($matches)) {
+										echo "There are no matches scheduled today!";
+									} else {
+										foreach ($matches as $row) {
+											echo "<h3>$row->matchName</h3>";
+											echo "<p><strong>Tournament: </strong>$row->tournamentName";
+											echo "<p><strong>Location: </strong>$row->matchLocation";
+											echo "<p><strong>Time: </strong>$row->matchTime";
+											echo "<p><strong>Score: </strong>";
+											if ($row->matchPlayed == 1) {
+												echo "$row->matchScore - $row->matchScoreOpponent";
+											} else {
+												echo "Not played";
+											}
+											echo "<br><br>";
+										}
+									}
+									?>
 							</div>
 						</div>
 					</div>

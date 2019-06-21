@@ -30,12 +30,12 @@
 										echo '<tr>';
 										echo "<th scope='row'>$row->matchId</th>";
 										echo "<th scope='row'>$row->tId</th>";
-										echo "<td>$row->name</td>";
-										echo "<td>$row->location</td>";
-										echo "<td>$row->date</td>";
-										echo "<td>$row->time</td>";
-										if ($row->played==1) {
-											echo "<td>Yes ($row->score-$row->scoreOpponent)</td>";
+										echo "<td>$row->matchName</td>";
+										echo "<td>$row->matchLocation</td>";
+										echo "<td>$row->matchDate</td>";
+										echo "<td>$row->matchTime</td>";
+										if ($row->matchPlayed==1) {
+											echo "<td>Yes ($row->matchScore-$row->matchScoreOpponent)</td>";
 										}
 										else {
 											echo "<td>No</td>";

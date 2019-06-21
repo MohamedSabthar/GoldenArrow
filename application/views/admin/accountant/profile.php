@@ -24,7 +24,7 @@
 								<h6>
 									Full name
 								</h6>
-								<?php echo $accountant->name ?>
+								<?php echo $accountant->accountantName ?>
 							</p>
 						</div>
 					</div>

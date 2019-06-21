@@ -18,13 +18,13 @@
 								<h6>
 									Name
 								</h6>
-								<?php echo $tournament->name ?>
+								<?php echo $tournament->tournamentName ?>
 							</p>
 							<p>
 								<h6>
 									Place
 								</h6>
-								<?php echo $tournament->place ?>
+								<?php echo $tournament->tournamentPlace ?>
 							</p>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 				<div class="col-lg-9 mb-12">
 					<div class="card">
 						<div class="card-header">
-							<h6 style='float:left' class="text-uppercase mb-0">Players</h6>
+							<h6 style='float:left' class="text-uppercase mb-0">Matches</h6>
 							<div style='float:right'><a class='btn btn-primary' href="<?=base_url("index.php/AdminController/addMatch")?>">+</a></div>
 						</div>
 						<div class="card-body">
@@ -56,12 +56,12 @@
 										$deleteUrl = base_url("index.php/AdminController/deleteMatch/$row->matchId");
 										echo '<tr>';
 										echo "<th scope='row'>$row->matchId</th>";
-										echo "<td>$row->name</td>";
-										echo "<td>$row->location</td>";
-										echo "<td>$row->date</td>";
-										echo "<td>$row->time</td>";
-										if ($row->played==1) {
-											echo "<td>Yes ($row->score-$row->scoreOpponent)</td>";
+										echo "<td>$row->matchName</td>";
+										echo "<td>$row->matchLocation</td>";
+										echo "<td>$row->matchDate</td>";
+										echo "<td>$row->matchTime</td>";
+										if ($row->matchPlayed==1) {
+											echo "<td>Yes ($row->matchScore-$row->matchScoreOpponent)</td>";
 										}
 										else {
 											echo "<td>No</td>";

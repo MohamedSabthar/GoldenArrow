@@ -14,7 +14,7 @@ class AdminModel extends CI_Model
 
     public function getTournament($tournamentId)
     {
-        $this->db->select('');
+        $this->db->select('*');
         $this->db->from('tournament');
         $this->db->where('tournamentId', $tournamentId);
 
@@ -27,8 +27,8 @@ class AdminModel extends CI_Model
     {
         // init user
         $tournamentData = array(
-            'name' => $this->input->post('name'),
-            'place' => $this->input->post('place'),
+            'tournamentName' => $this->input->post('tournamentName'),
+            'tournamentPlace' => $this->input->post('tournamentPlace'),
         );
 
         $this->db->insert('tournament', $tournamentData);
@@ -39,8 +39,8 @@ class AdminModel extends CI_Model
         // init user
         $tournamentData = array(
             'tournamentId' => $tournamentId,
-            'name' => $this->input->post('name'),
-            'place' => $this->input->post('place'),
+            'tournamentName' => $this->input->post('tournamentName'),
+            'tournamentPlace' => $this->input->post('tournamentPlace'),
         );
 
         $this->db->replace('tournament', $tournamentData);
@@ -51,8 +51,6 @@ class AdminModel extends CI_Model
         $this->db->where('tournamentId', $tournamentId);
         $this->db->delete('tournament');
     }
-
-
 
     public function getMatches()
     {
@@ -69,7 +67,6 @@ class AdminModel extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('matchData');
-        //$this->db->where('userRole', 'player');
         $this->db->where('matchId', $matchId);
         $this->db->join('tournament', 'matchData.tId = tournament.tournamentId');
 
@@ -94,17 +91,17 @@ class AdminModel extends CI_Model
         // init user
         $matchData = array(
             'tId' => $this->input->post('tournamentId'),
-            'name' => $this->input->post('name'),
-            'location' => $this->input->post('location'),
-            'date' => $this->input->post('date'),
-            'time' => $this->input->post('time'),
-            'played' => $this->input->post('played'),
+            'matchName' => $this->input->post('matchName'),
+            'matchLocation' => $this->input->post('matchLocation'),
+            'matchDate' => $this->input->post('matchDate'),
+            'matchTime' => $this->input->post('matchTime'),
+            'matchPlayed' => $this->input->post('matchPlayed'),
         );
 
-        if ($this->input->post('played') == 1) {
+        if ($this->input->post('matchPlayed') == 1) {
             $matchData += array(
-                'score' => $this->input->post('score'),
-                'scoreOpponent' => $this->input->post('scoreOpponent'),
+                'matchScore' => $this->input->post('matchScore'),
+                'matchScoreOpponent' => $this->input->post('matchScoreOpponent'),
             );
         }
 
@@ -118,21 +115,20 @@ class AdminModel extends CI_Model
     public function editMatch($matchId)
     {
         // init user
-        // init user
         $matchData = array(
             'matchId' => $matchId,
             'tId' => $this->input->post('tournamentId'),
-            'name' => $this->input->post('name'),
-            'location' => $this->input->post('location'),
-            'date' => $this->input->post('date'),
-            'time' => $this->input->post('time'),
-            'played' => $this->input->post('played'),
+            'matchName' => $this->input->post('matchName'),
+            'matchLocation' => $this->input->post('matchLocation'),
+            'matchDate' => $this->input->post('matchDate'),
+            'matchTime' => $this->input->post('matchTime'),
+            'matchPlayed' => $this->input->post('matchPlayed'),
         );
 
-        if ($this->input->post('played') == 1) {
+        if ($this->input->post('matchPlayed') == 1) {
             $matchData += array(
-                'score' => $this->input->post('score'),
-                'scoreOpponent' => $this->input->post('scoreOpponent'),
+                'matchScore' => $this->input->post('matchScore'),
+                'matchScoreOpponent' => $this->input->post('matchScoreOpponent'),
             );
         }
         $this->db->replace('matchData', $matchData);
@@ -144,11 +140,6 @@ class AdminModel extends CI_Model
         $this->db->delete('matchData');
     }
 
-
-
-
-
-
     public function getPlayers()
     {
         $this->db->select('*');
@@ -156,23 +147,19 @@ class AdminModel extends CI_Model
         $this->db->where('userRole', 'player');
         $this->db->join('playerData', 'user.userId = playerData.playerId');
 
-        //$query = $this->db->get_where('user', array('userRole' => 'player'));
         $query = $this->db->get();
-
         return $query->result();
     }
 
     public function getPlayer($userId)
     {
-        $this->db->select('');
+        $this->db->select('*');
         $this->db->from('user');
         $this->db->where('userRole', 'player');
         $this->db->where('userId', $userId);
         $this->db->join('playerData', 'user.userId = playerData.playerId');
 
-        //$query = $this->db->get_where('user', array('userRole'=>'player', 'userId'=>$userId));
         $query = $this->db->get();
-
         return $query->row();
     }
 
@@ -197,8 +184,8 @@ class AdminModel extends CI_Model
         // add player specific data to playerData table
         $playerData = array(
             'playerId' => $playerId,
-            'name' => $this->input->post('name'),
-            'position' => $this->input->post('position')
+            'playerName' => $this->input->post('playerName'),
+            'playerPosition' => $this->input->post('playerPosition')
         );
 
         $this->db->insert('playerData', $playerData);
@@ -220,8 +207,8 @@ class AdminModel extends CI_Model
         // add player specific data to playerData table
         $playerData = array(
             'playerId' => $userId,
-            'name' => $this->input->post('name'),
-            'position' => $this->input->post('position')
+            'playerName' => $this->input->post('playerName'),
+            'playerPosition' => $this->input->post('playerPosition')
         );
 
         $this->db->replace('playerData', $playerData);
@@ -236,8 +223,6 @@ class AdminModel extends CI_Model
         $this->db->delete('playerData');
     }
 
-
-
     public function getTrainers()
     {
         $this->db->select('*');
@@ -245,9 +230,7 @@ class AdminModel extends CI_Model
         $this->db->where('userRole', 'trainer');
         $this->db->join('trainerData', 'user.userId = trainerData.trainerId');
 
-        //$query = $this->db->get_where('user', array('userRole' => 'player'));
         $query = $this->db->get();
-
         return $query->result();
     }
 
@@ -259,9 +242,7 @@ class AdminModel extends CI_Model
         $this->db->where('userId', $userId);
         $this->db->join('trainerData', 'user.userId = trainerData.trainerId');
 
-        //$query = $this->db->get_where('user', array('userRole'=>'player', 'userId'=>$userId));
         $query = $this->db->get();
-
         return $query->row();
     }
 
@@ -284,7 +265,7 @@ class AdminModel extends CI_Model
         // add player specific data to playerData table
         $trainerData = array(
             'trainerId' => $result->userId,
-            'name' => $this->input->post('name'),
+            'trainerName' => $this->input->post('trainerName'),
         );
 
         $this->db->insert('trainerData', $trainerData);
@@ -306,13 +287,11 @@ class AdminModel extends CI_Model
         // add player specific data to playerData table
         $trainerData = array(
             'trainerId' => $userId,
-            'name' => $this->input->post('name'),
+            'trainerName' => $this->input->post('trainerName'),
         );
 
         $this->db->replace('trainerData', $trainerData);
     }
-
-
 
     public function deleteTrainer($userId)
     {
@@ -323,7 +302,6 @@ class AdminModel extends CI_Model
         $this->db->delete('trainerData');
     }
 
-
     public function getAccountants()
     {
         $this->db->select('*');
@@ -331,9 +309,7 @@ class AdminModel extends CI_Model
         $this->db->where('userRole', 'accountant');
         $this->db->join('accountantData', 'user.userId = accountantData.accountantId');
 
-        //$query = $this->db->get_where('user', array('userRole' => 'player'));
         $query = $this->db->get();
-
         return $query->result();
     }
 
@@ -345,9 +321,7 @@ class AdminModel extends CI_Model
         $this->db->where('userId', $userId);
         $this->db->join('accountantData', 'user.userId = accountantData.accountantId');
 
-        //$query = $this->db->get_where('user', array('userRole'=>'player', 'userId'=>$userId));
         $query = $this->db->get();
-
         return $query->row();
     }
 
@@ -370,7 +344,7 @@ class AdminModel extends CI_Model
         // add player specific data to playerData table
         $accountantData = array(
             'accountantId' => $result->userId,
-            'name' => $this->input->post('name'),
+            'accountantName' => $this->input->post('accountantName'),
         );
 
         $this->db->insert('accountantData', $accountantData);
@@ -392,7 +366,7 @@ class AdminModel extends CI_Model
         // add player specific data to playerData table
         $accountantData = array(
             'accountantId' => $userId,
-            'name' => $this->input->post('name'),
+            'accountantName' => $this->input->post('accountantName'),
         );
 
         $this->db->replace('accountantData', $accountantData);
@@ -426,18 +400,15 @@ class AdminModel extends CI_Model
         $query = $this->db->count_all('tournament');  // Produces an integer, like 25
         return $query;
     }
-    /*
 
-public function getPracticeSessi ons()
-{}
+    public function getDateMatches($date) {
+        $this->db->select('*');
+        $this->db->from('matchData');
+        $this->db->where('matchDate', $date);
 
-public function getPlayerCo unt()
-{}
+        $this->db->join('tournament', 'matchData.tId = tournament.tournamentId');
 
-public function getTournamentCo unt()
-{}
-
-public function getMatchCo unt()
-{}
-    */
+        $query = $this->db->get();
+        return $query->result();
+    }
 }

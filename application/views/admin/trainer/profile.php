@@ -24,7 +24,7 @@
 								<h6>
 									Full name
 								</h6>
-								<?php echo $trainer->name ?>
+								<?php echo $trainer->trainerName ?>
 							</p>
 						</div>
 					</div>

@@ -22,51 +22,51 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Name</label>
 								<div class="col-md-9">
-									<input type="text" name='name' class="form-control" value='<?php echo $match->name?>'>
+									<input type="text" name='matchName' class="form-control" value='<?php echo $match->matchName?>'>
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Location</label>
 								<div class="col-md-9">
-									<input type="text" name='location' class="form-control" value='<?php echo $match->location?>'>
+									<input type="text" name='matchLocation' class="form-control" value='<?php echo $match->matchLocation?>'>
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Date</label>
 								<div class="col-md-9">
-									<input type="date" name='date' class="form-control" value='<?php echo $match->date?>'>
+									<input type="date" name='matchDate' class="form-control" value='<?php echo $match->matchDate?>'>
 								</div>
 							</div>
 	
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Time</label>
 								<div class="col-md-9">
-									<input type="time" name='time' class="form-control" value='<?php echo $match->time?>'>
+									<input type="time" name='matchTime' class="form-control" value='<?php echo $match->matchTime?>'>
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Played</label>
 								<div class="col-md-9">
-									<select name="played" class="form-control">
-										<option <?php if ($match->played==1) echo 'selected'?> value='1'>Yes</option>
-										<option <?php if ($match->played==0) echo 'selected'?> value='0'>No</option>
+									<select name="matchPlayed" class="form-control">
+										<option <?php if ($match->matchPlayed==1) echo 'selected'?> value='1'>Yes</option>
+										<option <?php if ($match->matchPlayed==0) echo 'selected'?> value='0'>No</option>
 									</select> </div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Score</label>
 								<div class="col-md-9">
-									<input type="text" name='score' class="form-control" <?php if ($match->played==1) echo "value='$match->score'"?> >
+									<input type="text" name='matchScore' class="form-control" <?php if ($match->matchPlayed==1) echo "value='$match->matchScore'"?> >
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Opponent score</label>
 								<div class="col-md-9">
-									<input type="text" name='scoreOpponent' class="form-control" <?php if ($match->played==1) echo "value='$match->scoreOpponent'"?>>
+									<input type="text" name='matchScoreOpponent' class="form-control" <?php if ($match->matchPlayed==1) echo "value='$match->matchScoreOpponent'"?>>
 								</div>
 							</div>
 
