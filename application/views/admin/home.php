@@ -9,7 +9,7 @@
 							<div class="dot mr-3 bg-violet"></div>
 							<div class="text">
 								<h6 class="mb-0">Matches</h6>
-								<span class="text-gray">1</span>
+								<span class="text-gray"><?=$matchCount?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-violet">
@@ -23,7 +23,7 @@
 							<div class="dot mr-3 bg-green"></div>
 							<div class="text">
 								<h6 class="mb-0">Tournaments</h6>
-								<span class="text-gray">1</span>
+								<span class="text-gray"><?=$tournamentCount?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-green">
@@ -37,7 +37,7 @@
 							<div class="dot mr-3 bg-blue"></div>
 							<div class="text">
 								<h6 class="mb-0">Players</h6>
-								<span class="text-gray">1</span>
+								<span class="text-gray"><?=$playerCount?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-blue">
@@ -51,7 +51,7 @@
 							<div class="dot mr-3 bg-red"></div>
 							<div class="text">
 								<h6 class="mb-0">Trainers</h6>
-								<span class="text-gray">1</span>
+								<span class="text-gray"><?=$trainerCount?></span>
 							</div>
 						</div>
 						<div class="icon text-white bg-red">

@@ -27,6 +27,11 @@ class AdminController extends CI_Controller
         $data['tournaments'] = $this->AdminModel->getPlayers();
         $data['matches'] = $this->AdminModel->getPlayers();
 
+        $data['matchCount'] = $this->AdminModel->getMatchCount();
+        $data['tournamentCount'] = $this->AdminModel->getTournamentCount();
+        $data['playerCount'] = $this->AdminModel->getPlayerCount();
+        $data['trainerCount'] = $this->AdminModel->getTrainerCount();
+
         // loading views
         $this->load->view('include/header', $header);
         $this->load->view('admin/sidebar', $data);
@@ -137,7 +142,9 @@ class AdminController extends CI_Controller
 
         // gather existing data
         $this->load->model('AdminModel');
-        $data['accountant'] = $this->AdminModel->getMatch($matchId);
+        $data['match'] = $this->AdminModel->getMatch($matchId);
+        
+
 
         $this->form_validation->set_rules('tournamentId', 'Tournament ID', 'required');
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -152,10 +159,10 @@ class AdminController extends CI_Controller
             $this->load->view('admin/match/edit_match', $data);
             $this->load->view('include/footer');
         } else {
-            $this->AdminModel->editAccountant($matchId);
+            $this->AdminModel->editMatch($matchId);
 
-            $message['text'] = 'Accountant was updated successfully';
-            $message['redirect'] = base_url('index.php/AdminController/viewAccountants');
+            $message['text'] = 'Match was updated successfully';
+            $message['redirect'] = base_url('index.php/AdminController/viewMatches');
 
             $this->load->view('include/header', $header);
             $this->load->view('admin/sidebar', $data);

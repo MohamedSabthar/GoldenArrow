@@ -78,12 +78,13 @@ class AdminModel extends CI_Model
         return $query->row();
     }
 
-    public function getTournamentMatches($tournamentId) {
+    public function getTournamentMatches($tournamentId)
+    {
         $this->db->select('*');
         $this->db->from('matchData');
         $this->db->where('tId', $tournamentId);
         $this->db->join('tournament', 'matchData.tId = tournament.tournamentId');
-        
+
         $query = $this->db->get();
         return $query->result();
     }
@@ -100,10 +101,10 @@ class AdminModel extends CI_Model
             'played' => $this->input->post('played'),
         );
 
-        if ($this->input->post('played')==1) {
+        if ($this->input->post('played') == 1) {
             $matchData += array(
                 'score' => $this->input->post('score'),
-                'scoreOpponent' => $this->input->post('opponent'),
+                'scoreOpponent' => $this->input->post('scoreOpponent'),
             );
         }
 
@@ -117,22 +118,23 @@ class AdminModel extends CI_Model
     public function editMatch($matchId)
     {
         // init user
-               // init user
-               $matchData = array(
-                'tId' => $this->input->post('tournamentId'),
-                'name' => $this->input->post('name'),
-                'location' => $this->input->post('location'),
-                'date' => $this->input->post('date'),
-                'time' => $this->input->post('time'),
-                'played' => $this->input->post('played'),
+        // init user
+        $matchData = array(
+            'matchId' => $matchId,
+            'tId' => $this->input->post('tournamentId'),
+            'name' => $this->input->post('name'),
+            'location' => $this->input->post('location'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time'),
+            'played' => $this->input->post('played'),
+        );
+
+        if ($this->input->post('played') == 1) {
+            $matchData += array(
+                'score' => $this->input->post('score'),
+                'scoreOpponent' => $this->input->post('scoreOpponent'),
             );
-    
-            if ($this->input->post('played')==1) {
-                $matchData += array(
-                    'score' => $this->input->post('score'),
-                    'scoreOpponent' => $this->input->post('opponent'),
-                );
-            }
+        }
         $this->db->replace('matchData', $matchData);
     }
 
@@ -404,15 +406,27 @@ class AdminModel extends CI_Model
         $this->db->where('accountantId', $userId);
         $this->db->delete('accountantData');
     }
-/*
-public function getTourname nts()
-{}
 
-public function getTournamentNa mes()
-{}
+    public function getPlayerCount() {
+        $query = $this->db->count_all('playerData');  // Produces an integer, like 25
+        return $query;
+    }
 
-public function getMatc hes()
-{}
+    public function getTrainerCount() {
+        $query = $this->db->count_all('trainerData');  // Produces an integer, like 25
+        return $query;
+    }
+
+    public function getMatchCount() {
+        $query = $this->db->count_all('matchData');  // Produces an integer, like 25
+        return $query;
+    }
+
+    public function getTournamentCount() {
+        $query = $this->db->count_all('tournament');  // Produces an integer, like 25
+        return $query;
+    }
+    /*
 
 public function getPracticeSessi ons()
 {}

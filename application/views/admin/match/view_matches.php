@@ -19,27 +19,29 @@
 										<th>Date</th>
 										<th>Time</th>
 										<th>Played</th>
-
 										<th></th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php
-									foreach ($players as $row) {
-										$profileUrl = base_url("index.php/AdminController/viewPlayer/$row->userId");
-										$editUrl = base_url("index.php/AdminController/editPlayer/$row->userId");
-										$deleteUrl = base_url("index.php/AdminController/deletePlayer/$row->userId");
+									foreach ($matches as $row) {
+										$editUrl = base_url("index.php/AdminController/editMatch/$row->matchId");
+										$deleteUrl = base_url("index.php/AdminController/deleteMatch/$row->matchId");
 										echo '<tr>';
-										echo "<th scope='row'>$row->userId</th>";
-										echo "<td>$row->userName</td>";
-										if ($row->accountStatus == 1) {
-											echo "<td>Active</td>";
-										} else {
-											echo "<td>Blocked</td>";
-										}
+										echo "<th scope='row'>$row->matchId</th>";
+										echo "<th scope='row'>$row->tId</th>";
 										echo "<td>$row->name</td>";
-										echo "<td>$row->position</td>";
-										echo "<td style='text-align: right'><a class='btn btn-primary' href='$profileUrl'>Profile</a>&nbsp<a class='btn btn-warning' href='$editUrl'>Edit</a>&nbsp<a class='btn btn-danger' href='$deleteUrl'>Delete</a></td>";
+										echo "<td>$row->location</td>";
+										echo "<td>$row->date</td>";
+										echo "<td>$row->time</td>";
+										if ($row->played==1) {
+											echo "<td>Yes ($row->score-$row->scoreOpponent)</td>";
+										}
+										else {
+											echo "<td>No</td>";
+										}
+
+										echo "<td style='text-align: right'><a class='btn btn-warning' href='$editUrl'>Edit</a>&nbsp<a class='btn btn-danger' href='$deleteUrl'>Delete</a></td>";
 										echo '</tr>';
 									}
 									?>

@@ -34,7 +34,7 @@
 					<div class="card">
 						<div class="card-header">
 							<h6 style='float:left' class="text-uppercase mb-0">Players</h6>
-							<div style='float:right'><a class='btn btn-primary' href="<?=base_url("index.php/AdminController/addTournamentMatch/$tournament->tournamentId")?>">+</a></div>
+							<div style='float:right'><a class='btn btn-primary' href="<?=base_url("index.php/AdminController/addMatch")?>">+</a></div>
 						</div>
 						<div class="card-body">
 							<table class="table card-text">
@@ -55,13 +55,13 @@
 										$editUrl = base_url("index.php/AdminController/editMatch/$row->matchId");
 										$deleteUrl = base_url("index.php/AdminController/deleteMatch/$row->matchId");
 										echo '<tr>';
-										echo "<th scope='row'>$row->tournamentId</th>";
+										echo "<th scope='row'>$row->matchId</th>";
 										echo "<td>$row->name</td>";
 										echo "<td>$row->location</td>";
 										echo "<td>$row->date</td>";
 										echo "<td>$row->time</td>";
 										if ($row->played==1) {
-											echo "<td>Yes ($row->score-$row->scoerOpponent)</td>";
+											echo "<td>Yes ($row->score-$row->scoreOpponent)</td>";
 										}
 										else {
 											echo "<td>No</td>";
