@@ -94,7 +94,7 @@
                                             <!-- delete button -->
                                             <form method="POST" action="/accountant/delete" class="d-inline">
                                                 <input name="paymentId" type="hidden" value=<?=$records->paymentId?> />
-                                                <button type="submit" class="btn btn-outline-danger"><i
+                                                <button onClick="return confirm('Are you sure you want to Delete ?')" type="submit" class="btn btn-outline-danger"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
@@ -160,7 +160,7 @@
                                             <!-- delete button -->
                                             <form method="POST" action="/accountant/delete" class="d-inline">
                                                 <input name="paymentId" type="hidden" value=<?=$records->paymentId?> />
-                                                <button type="submit" class="btn btn-outline-danger"><i
+                                                <button onClick="return confirm('Are you sure you want to Delete ?')" type="submit" class="btn btn-outline-danger"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>

@@ -18,10 +18,6 @@ class AccountantSalaryModel extends CI_Model
         return;
     }
 
-
-   
-
-
     public function getTrainerSalaryHistory($trainerId)
     {
         // get al reacords with given user id or userName from database

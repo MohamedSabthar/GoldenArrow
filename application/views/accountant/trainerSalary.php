@@ -56,11 +56,11 @@
                                                 View
                                             </button>
                                             <button type="button" data-toggle="modal" data-target="#addPayment"
-                                            class="btn btn-outline-success"
-                                            onClick="setIdToAddPaymentModel('<?=$trainer->userId?>')"
-                                            style="font-size:0.7rem">
-                                            Pay Salary
-                                        </button>
+                                                class="btn btn-outline-success"
+                                                onClick="setIdToAddPaymentModel('<?=$trainer->userId?>')"
+                                                style="font-size:0.7rem">
+                                                Pay Salary
+                                            </button>
                                         </p>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                                 aria-hidden="true">×</span></button>
                     </div>
                     <div class="modal-body" style="height:450px; overflow-y:scroll;">
-                        
+
                         <table class="table table-hover card-text">
                             <thead>
                                 <tr>
@@ -190,19 +190,19 @@
 
                             </tbody>
                         </table>
-                        </div>
                     </div>
                 </div>
-            
+            </div>
+
         </div>
         <!-- end of pay salary model -->
 
 
-          
 
 
- <!-- Update payment model -->
- <div id="updatePayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+        <!-- Update payment model -->
+        <div id="updatePayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             class="modal fade text-left" style="display: none;" aria-hidden="true">
             <div role="document" class="modal-dialog">
                 <div class="modal-content">
@@ -221,7 +221,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Date</label>
-                                <input name="paymentDate" id="paymentDateUpdate" type="date" class="form-control" required>
+                                <input name="paymentDate" id="paymentDateUpdate" type="date" class="form-control"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label>Payment Method</label>
@@ -267,7 +268,7 @@ function pass(ammount, paymentDate, salarytId) {
     console.log(ammount);
     document.getElementById("ammountUpdate").value = ammount;
     document.getElementById("paymentDateUpdate").value = paymentDate;
-    
+
     document.getElementById("salaryIdUpdate").value = salarytId;
 }
 </script>

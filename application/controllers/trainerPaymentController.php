@@ -8,7 +8,6 @@ class TrainerPaymentController extends CI_Controller
         $this->data = array();
     }
 
-
     public function index()
     {
         $header = array("title"=>"Accountant",
@@ -67,7 +66,6 @@ class TrainerPaymentController extends CI_Controller
         $this->load->view('include/footer');
     }
 
-
     public function viewSalaryHistory()
     {
         $this->load->model('AccountantSalaryModel');
@@ -85,7 +83,7 @@ class TrainerPaymentController extends CI_Controller
             $data.='<td>
                         <form method="POST" action="/trainerPaymentController/deleteSalaryRecord" class="d-inline">
                             <input name="paymentId" type="hidden" value="'.$result->salaryId.'">
-                            <button type="submit" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+                            <button onClick="return confirm(`Are you sure you want to Delete ?`)"type="submit" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
                         </form>
                     </td>';
             $data.='</tr>';
@@ -94,6 +92,7 @@ class TrainerPaymentController extends CI_Controller
         echo $data;
         return;
     }
+
     public function deleteSalaryRecord()
     {
         $this->load->model('AccountantSalaryModel');
@@ -102,8 +101,6 @@ class TrainerPaymentController extends CI_Controller
         
         redirect('/accountant/trainers', 'refresh'); //redirecting to dashboard
     }
-
-
 
     public function addSalaryRecord()
     {
