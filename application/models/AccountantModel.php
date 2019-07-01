@@ -54,6 +54,7 @@ class AccountantModel extends CI_Model
         //get al reacords with given user id or userName from database
         $this->db->select('*');
         $this->db->from('playerPayment');
+        $this->db->where('userRole', 'player');
         $this->db->join('user', 'user.userId = playerPayment.playerId');
         
         if ($nameAndId["playerId"]!="") {
@@ -110,7 +111,7 @@ class AccountantModel extends CI_Model
     {
         $this->db->select('userId,userName'); //searching for player with given userId or userName
         $this->db->from('user');
-       
+        $this->db->where('userRole', 'player');
         if (!empty($nameAndId["playerId"])) {
             $this->db->where('userId', $nameAndId["playerId"]);
         }
