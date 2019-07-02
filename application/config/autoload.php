@@ -92,11 +92,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-<<<<<<< HEAD
-$autoload['helper'] = array('url');
-=======
 $autoload['helper'] = array('url', 'form');
->>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 
 /*
 | -------------------------------------------------------------------
@@ -110,11 +106,7 @@ $autoload['helper'] = array('url', 'form');
 | config files.  Otherwise, leave it blank.
 |
 */
-<<<<<<< HEAD
 $autoload['config'] = array('paypal');
-=======
-$autoload['config'] = array();
->>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 
 /*
 | -------------------------------------------------------------------
