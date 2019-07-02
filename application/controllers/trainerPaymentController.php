@@ -23,7 +23,7 @@ class TrainerPaymentController extends CI_Controller
         $this->load->model('AccountantSalaryModel');
 
         $config = array();
-
+        // setting up pagination
         $config["base_url"] = "/trainerPaymentController/index";
         $this->pagination->initialize($config);
         $this->load->model('AccountantModel');
@@ -105,7 +105,7 @@ class TrainerPaymentController extends CI_Controller
     public function addSalaryRecord()
     {
         $this->load->model('AccountantSalaryModel');
-        $this->AccountantSalaryModel->addSalaryRecord($this->input->post()); //updating selected payment record in database
+        $this->AccountantSalaryModel->addSalaryRecord($this->input->post()); //insert payment record in to database
 
         redirect('/accountant/trainers', 'refresh'); //redirecting to dashboard
     }

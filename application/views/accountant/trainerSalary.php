@@ -51,12 +51,12 @@
 
                                         <p class="mb-0 mt-3 mt-lg-0 mx-5">
                                             <button type="button" data-toggle="modal" data-target="#history"
-                                                class="btn btn-outline-secondary"
+                                                class="ml-3 mb-1 btn btn-outline-secondary"
                                                 onClick="viewHistory('<?=$trainer->userId?>')" style="font-size:0.7rem">
                                                 View
                                             </button>
                                             <button type="button" data-toggle="modal" data-target="#addPayment"
-                                                class="btn btn-outline-success"
+                                                class="ml-3 btn btn-outline-success"
                                                 onClick="setIdToAddPaymentModel('<?=$trainer->userId?>')"
                                                 style="font-size:0.7rem">
                                                 Pay Salary
@@ -106,7 +106,7 @@
 
                                     <p class="mb-0 mt-3 mt-lg-0 mx-5">
                                         <button type="button" data-toggle="modal" data-target="#addPayment"
-                                            class="btn btn-outline-success"
+                                            class="ml-3 btn btn-outline-success"
                                             onClick="setIdToAddPaymentModel('<?=$trainer->userId?>')"
                                             style="font-size:0.7rem">
                                             Pay Salary
