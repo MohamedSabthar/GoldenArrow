@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 =========================================
 =========================================
@@ -12,6 +13,22 @@
 * GENERAL
 * =====================
 *
+=======
+/*
+=========================================
+=========================================
+
+   Bubbly Dashboard Template
+
+=========================================
+========================================= */
+/*
+*
+* =====================
+* GENERAL
+* =====================
+*
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .shadow {
   -webkit-box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1) !important;
@@ -1208,12 +1225,21 @@ button {
   left: 0;
 }
 
+<<<<<<< HEAD
 /*
 *
 * =====================
 * NAVBAR
 * =====================
 *
+=======
+/*
+*
+* =====================
+* NAVBAR
+* =====================
+*
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .navbar .dropdown-toggle::after {
   display: none;
@@ -1252,12 +1278,21 @@ button {
   right: 0;
 }
 
+<<<<<<< HEAD
 /*
 *
 * =====================
 * SIDEBAR
 * =====================
 *
+=======
+/*
+*
+* =====================
+* SIDEBAR
+* =====================
+*
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .sidebar {
   width: 16rem;
@@ -1390,12 +1425,21 @@ button {
   color: #6c757d;
 }
 
+<<<<<<< HEAD
 /*
 
 =====================
 STYLE SWITCHER FOR DEMO
 =====================
 
+=======
+/*
+
+=====================
+STYLE SWITCHER FOR DEMO
+=====================
+
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 #style-switch-button {
   position: fixed;
@@ -1421,6 +1465,7 @@ STYLE SWITCHER FOR DEMO
   color: #495057;
 }
 
+<<<<<<< HEAD
 /* =========================================
 
       THEMING OF THE BOOTSTRAP COMPONENTS
@@ -1441,6 +1486,28 @@ STYLE SWITCHER FOR DEMO
 */
 /*
  * 1. NAVBAR
+=======
+/* =========================================
+
+      THEMING OF THE BOOTSTRAP COMPONENTS
+
+   =========================================
+
+    1 - NAVBAR
+    2 - BUTTONS
+    3 - TYPE
+    4 - PAGINATION
+    5 - UTILITIES
+    6 - FORMS
+    7 - CODE
+    8 - NAV
+    9 - CARD
+    10 - DROPDOWNS
+
+*/
+/*
+ * 1. NAVBAR
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
  */
 .navbar {
   padding: 0.5rem 1rem;
@@ -1542,8 +1609,13 @@ STYLE SWITCHER FOR DEMO
   color: rgba(255, 255, 255, 0.5);
 }
 
+<<<<<<< HEAD
 /*
  * 2. BUTTONS
+=======
+/*
+ * 2. BUTTONS
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
  */
 .btn {
   font-weight: 400;
@@ -2834,8 +2906,13 @@ STYLE SWITCHER FOR DEMO
   border-radius: 2rem;
 }
 
+<<<<<<< HEAD
 /*
  * 3. TYPE
+=======
+/*
+ * 3. TYPE
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
  */
 body {
   font-family: "Poppins", sans-serif;
@@ -2973,8 +3050,13 @@ a.text-primary:hover, a.text-primary:focus {
   color: #135dff !important;
 }
 
+<<<<<<< HEAD
 /*
  * 4. PAGINATION
+=======
+/*
+ * 4. PAGINATION
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
  */
 .page-item:first-child .page-link {
   border-top-left-radius: 2rem;
@@ -3045,8 +3127,13 @@ a.text-primary:hover, a.text-primary:focus {
   border-bottom-right-radius: 2rem;
 }
 
+<<<<<<< HEAD
 /*
 * 5. UTILITIES
+=======
+/*
+* 5. UTILITIES
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .bg-primary {
   background-color: #4680ff !important;
@@ -3609,8 +3696,13 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #1d2124;
 }
 
+<<<<<<< HEAD
 /*
   * 6. FORMS
+=======
+/*
+  * 6. FORMS
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
   */
 .form-control {
   padding: 0.4rem 0.8rem;
@@ -3984,16 +4076,26 @@ select.form-control-lg:not([size]):not([multiple]) {
   background-color: rgba(70, 128, 255, 0.5);
 }
 
+<<<<<<< HEAD
 /*
 * 7.CODE
+=======
+/*
+* 7.CODE
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 code {
   font-size: 87.5%;
   color: #e83e8c;
 }
 
+<<<<<<< HEAD
 /*
 * 8. NAV
+=======
+/*
+* 8. NAV
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .nav-link {
   padding: 0.5rem 1rem;
@@ -4041,8 +4143,13 @@ code {
   background-color: #4680ff;
 }
 
+<<<<<<< HEAD
 /*
 * 9. CARD
+=======
+/*
+* 9. CARD
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .card {
   background-color: #fff;
@@ -4154,8 +4261,13 @@ code {
   }
 }
 
+<<<<<<< HEAD
 /*
 * 10. DROPDOWNS
+=======
+/*
+* 10. DROPDOWNS
+>>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
 */
 .dropdown-menu {
   min-width: 10rem;

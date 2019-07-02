@@ -5,7 +5,7 @@
             </div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link text-muted ">
+                    <a href="/accountant/dashboard" class="sidebar-link text-muted ">
                         <i class="o-home-1 mr-3 text-gray"></i>
                         <span>Dashboard</span>
                     </a>
@@ -21,7 +21,7 @@
                         <span>Players Payment</span></a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link text-muted">
+                    <a href="/accountant/trainers" class="sidebar-link text-muted">
                         <i class="far fa-credit-card  mr-3 text-gray"></i>
                         <span>Trainers Salary</span></a>
                 </li>
