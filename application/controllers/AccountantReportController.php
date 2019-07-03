@@ -5,8 +5,7 @@ class AccountantReportController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->session->userdata('userName');
-
+        $this->load->library('session');
         if($this->session->userdata('userRole')!='accountant') return redirect("/");
 
     }
