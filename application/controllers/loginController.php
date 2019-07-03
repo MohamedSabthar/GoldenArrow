@@ -42,6 +42,8 @@
                            return redirect('firstViewController/test');
                     if($val['userRole'] == "accountant")
                            return redirect('accountant/dashboard');
+                    if($val['userRole'] == "trainer")
+                        return redirect('trainerController');
                             
 
 
