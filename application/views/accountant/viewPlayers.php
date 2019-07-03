@@ -51,7 +51,7 @@
 
                                         <p class="mb-0 mt-3 mt-lg-0 mx-5">
                                         <button type="button" data-toggle="modal" data-target="#addPayment"
-                                        class="btn btn-outline-success"
+                                        class="ml-3 btn btn-outline-success"
                                         onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
                                         style="font-size:0.7rem">
                                         Add Payment
@@ -99,7 +99,7 @@
 
                                     <p class="mb-0 mt-3 mt-lg-0 mx-5">
                                     <button type="button" data-toggle="modal" data-target="#addPayment"
-                                        class="btn btn-outline-success"
+                                        class="ml-3 btn btn-outline-success"
                                         onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
                                         style="font-size:0.7rem">
                                         Add Payment
