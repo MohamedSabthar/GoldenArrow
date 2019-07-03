@@ -5,13 +5,17 @@ class AccountantReportController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->session->userdata('userName');
+
+        if($this->session->userdata('userRole')!='accountant') return redirect("/");
+
     }
 
     public function index()
     {
         $header = array("title"=>"Accountant",
         "dashboardTitle"=>"Accountant Dashboard",
-        "userName"=>"Accountant Name",
+        "userName"=>$this->session->userdata('userName'),
         "userRole"=>"Accountant"); //setting header data
 
         //loding view

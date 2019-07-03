@@ -22,7 +22,7 @@
                 {
                     echo "User Name or Password you entered is incorrect";
                     $this->session->set_flashdata('login_fail','Invalid Username/Pasword');
-                    redirect('loginCOntroller/login');
+                    redirect('/');
                 }
                 else
                 {
@@ -38,12 +38,14 @@
 
                     $this->session->set_userdata($currentUser);
 
-                    if($val['userRole'] == "player"){
-                            redirect('firstViewController/test');
+                    if($val['userRole'] == "player")
+                           return redirect('firstViewController/test');
+                    if($val['userRole'] == "accountant")
+                           return redirect('accountant/dashboard');
                             
 
 
-                    }
+                    
                 }
 
            }

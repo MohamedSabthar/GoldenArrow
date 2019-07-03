@@ -9,11 +9,7 @@
                             <h3 class="h6 text-uppercase mb-0">Search Player Payments</h3>
                         </div>
                         <div class="card-body">
-<<<<<<< HEAD
-                            <form class="form-inline" method="POST" action="/accountant/">
-=======
                             <form class="form-inline" method="POST" action="/accountant/payments">
->>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                                 <div class="form-group">
                                     <label for="playerName" class="sr-only">Name</label>
                                     <input id="playerName" type="text" placeholder="Name" class="mr-3 form-control"
@@ -98,11 +94,7 @@
                                             <!-- delete button -->
                                             <form method="POST" action="/accountant/delete" class="d-inline">
                                                 <input name="paymentId" type="hidden" value=<?=$records->paymentId?> />
-<<<<<<< HEAD
-                                                <button type="submit" class="btn btn-outline-danger"><i
-=======
                                                 <button onClick="return confirm('Are you sure you want to Delete ?')" type="submit" class="btn btn-outline-danger"><i
->>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
@@ -168,11 +160,7 @@
                                             <!-- delete button -->
                                             <form method="POST" action="/accountant/delete" class="d-inline">
                                                 <input name="paymentId" type="hidden" value=<?=$records->paymentId?> />
-<<<<<<< HEAD
-                                                <button type="submit" class="btn btn-outline-danger"><i
-=======
                                                 <button onClick="return confirm('Are you sure you want to Delete ?')" type="submit" class="btn btn-outline-danger"><i
->>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
