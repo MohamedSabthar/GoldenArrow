@@ -5,7 +5,7 @@
             </div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item">
-                    <a href="/AccountantReportController" class="sidebar-link text-muted ">
+                    <a href="/accountant/dashboard" class="sidebar-link text-muted ">
                         <i class="o-home-1 mr-3 text-gray"></i>
                         <span>Dashboard</span>
                     </a>
