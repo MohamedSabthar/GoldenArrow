@@ -5,6 +5,8 @@ class trainerController extends CI_Controller {
     public function __construct() {
         parent:: __construct();
         $this->load->model('trainerModel');
+        $this->load->library('session');
+        if($this->session->userdata('userRole')!='trainer') return redirect("/");
     }
 
     //Practice sessions dashboard
