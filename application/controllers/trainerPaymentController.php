@@ -19,10 +19,7 @@ class TrainerPaymentController extends CI_Controller
                         "userRole"=>"Accountant"); //setting header data
 
         //pagination styling and configration
-        $header = array("title"=>"Accountant",
-        "dashboardTitle"=>"Accountant Dashboard",
-        "userName"=>"Accountant Name",
-        "userRole"=>"Accountant"); //setting header data
+
         $this->load->model('AccountantSalaryModel');
 
         $config = array();

@@ -16,7 +16,7 @@
         if($this->session->userdata('userId') != null){
 
             $this->load->view('userFirstView');
-            echo $this->session->userdata('userName');  
+            echo $this->session->userdata('userName');
         }
         else{
             // Redirect to Login Page
