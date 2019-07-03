@@ -6,20 +6,20 @@ class TrainerPaymentController extends CI_Controller
     {
         parent::__construct();
         $this->data = array();
+        $this->load->library('session');
+        if($this->session->userdata('userRole')!='accountant')  return redirect("/");
     }
+    
 
     public function index()
     {
         $header = array("title"=>"Accountant",
                         "dashboardTitle"=>"Accountant Dashboard",
-                        "userName"=>"Accountant Name",
+                        "userName"=>$this->session->userdata('userName'),
                         "userRole"=>"Accountant"); //setting header data
 
         //pagination styling and configration
-        $header = array("title"=>"Accountant",
-        "dashboardTitle"=>"Accountant Dashboard",
-        "userName"=>"Accountant Name",
-        "userRole"=>"Accountant"); //setting header data
+
         $this->load->model('AccountantSalaryModel');
 
         $config = array();

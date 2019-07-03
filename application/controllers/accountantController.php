@@ -6,6 +6,9 @@ class AccountantController extends CI_Controller
     {
         parent::__construct();
         $this->data = array();
+        $this->session->userdata('userName');
+        if($this->session->userdata('userRole')!='accountant') return redirect("/");
+
     }
 
 
@@ -13,7 +16,7 @@ class AccountantController extends CI_Controller
     {
         $header = array("title"=>"Accountant",
                         "dashboardTitle"=>"Accountant Dashboard",
-                        "userName"=>"Accountant Name",
+                        "userName"=>$this->session->userdata('userName'),
                         "userRole"=>"Accountant"); //setting header data
 
         //pagination styling and configration
@@ -105,7 +108,7 @@ class AccountantController extends CI_Controller
     {
         $header = array("title"=>"Accountant",
                         "dashboardTitle"=>"Accountant Dashboard",
-                        "userName"=>"Accountant Name",
+                        "userName"=>$this->session->userdata('userName'),
                         "userRole"=>"Accountant"); //setting header data
         $this->load->model('AccountantModel');
 
