@@ -9,7 +9,7 @@
                             <h3 class="h6 text-uppercase mb-0">Search Player Payments</h3>
                         </div>
                         <div class="card-body">
-                            <form class="form-inline" method="POST" action="/accountant/">
+                            <form class="form-inline" method="POST" action="/accountant/payments">
                                 <div class="form-group">
                                     <label for="playerName" class="sr-only">Name</label>
                                     <input id="playerName" type="text" placeholder="Name" class="mr-3 form-control"
