@@ -23,7 +23,7 @@ class PlayerController extends CI_Controller
 		 //loding view
 		 $this->load->view('include/header', $header);
 		 $this->load->view('player/sideBar/sidePlayerProfile');
-		 $this->load->view('player/playerDashboard',);
+		 $this->load->view('player/playerDashboard');
 		 $this->load->view('include/footer');
 	}
 
