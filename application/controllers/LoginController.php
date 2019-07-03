@@ -3,7 +3,7 @@
         public function __construct()
         {
             parent ::__construct();
-            $this->load->model('loginModel');
+            $this->load->model('LoginModel');
             $this->load->helper('url');
             $this->load->library('session');
           //  $this->load->view('userLogin');
@@ -16,7 +16,7 @@
            {
                $username=$this->input->post('username');
                $password=$this->input->post('password');
-              $val= $this->load->loginModel->checkLogin($username,$password);
+              $val= $this->load->LoginModel->checkLogin($username,$password);
                
                 if($val==null)
                 {

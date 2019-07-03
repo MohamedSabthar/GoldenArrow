@@ -4,7 +4,7 @@
         public function __construct()
         {
             parent ::__construct();
-            $this->load->model('registrationModel');
+            $this->load->model('RegistrationModel');
 
         }
         
@@ -26,7 +26,7 @@
                  
             
                 
-             $val=$this->registrationModel->checkUsername($username);
+             $val=$this->RegistrationModel->checkUsername($username);
              //echo $val;
                 
               if($val=='1')
@@ -38,7 +38,7 @@
               }
 
               else{
-                          $this->registrationModel->addUser($name,$age,$hometown,$role,$username,$password);
+                          $this->RegistrationModel->addUser($name,$age,$hometown,$role,$username,$password);
                             echo("User Added Successfully");
              }
             

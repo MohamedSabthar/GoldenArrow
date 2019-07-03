@@ -6,6 +6,8 @@ class AccountantController extends CI_Controller
     {
         parent::__construct();
         $this->data = array();
+        $this->load->library('session');
+        if($this->session->userdata('userRole')!='accountant') return redirect("/");
     }
 
 
