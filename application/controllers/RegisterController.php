@@ -1,6 +1,6 @@
 
 <?php
-    class registerController extends CI_Controller{
+    class RegisterController extends CI_Controller{
         public function __construct()
         {
             parent ::__construct();
