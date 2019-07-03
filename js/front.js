@@ -1,89 +1,37 @@
-<<<<<<< HEAD
-$(function () {
+$(function() {
+	// ------------------------------------------------------- //
+	// Sidebar
+	// ------------------------------------------------------ //
+	$(".sidebar-toggler").on("click", function() {
+		$(".sidebar").toggleClass("shrink show");
+	});
 
+	// ------------------------------------------------------ //
+	// For demo purposes, can be deleted
+	// ------------------------------------------------------ //
 
-    // ------------------------------------------------------- //
-    // Sidebar
-    // ------------------------------------------------------ //
-    $('.sidebar-toggler').on('click', function () {
-        $('.sidebar').toggleClass('shrink show');
-    });
+	var stylesheet = $("link#theme-stylesheet");
+	$("<link id='new-stylesheet' rel='stylesheet'>").insertAfter(stylesheet);
+	var alternateColour = $("link#new-stylesheet");
 
+	if ($.cookie("theme_csspath")) {
+		alternateColour.attr("href", $.cookie("theme_csspath"));
+	}
 
+	$("#colour").change(function() {
+		if ($(this).val() !== "") {
+			var theme_csspath = "css/style." + $(this).val() + ".css";
 
-    // ------------------------------------------------------ //
-    // For demo purposes, can be deleted
-    // ------------------------------------------------------ //
+			alternateColour.attr("href", theme_csspath);
 
-    var stylesheet = $('link#theme-stylesheet');
-    $( "<link id='new-stylesheet' rel='stylesheet'>" ).insertAfter(stylesheet);
-    var alternateColour = $('link#new-stylesheet');
+			$.cookie("theme_csspath", theme_csspath, {
+				expires: 365,
+				path: document.URL.substr(0, document.URL.lastIndexOf("/"))
+			});
+		}
 
-    if ($.cookie("theme_csspath")) {
-        alternateColour.attr("href", $.cookie("theme_csspath"));
-    }
-
-    $("#colour").change(function () {
-
-        if ($(this).val() !== '') {
-
-            var theme_csspath = 'css/style.' + $(this).val() + '.css';
-
-            alternateColour.attr("href", theme_csspath);
-
-            $.cookie("theme_csspath", theme_csspath, { expires: 365, path: document.URL.substr(0, document.URL.lastIndexOf('/')) });
-
-        }
-
-        return false;
-    });
-
+		return false;
+	});
 });
 
-
-Cookies.set('active', 'true');
-=======
-$(function () {
-
-
-    // ------------------------------------------------------- //
-    // Sidebar
-    // ------------------------------------------------------ //
-    $('.sidebar-toggler').on('click', function () {
-        $('.sidebar').toggleClass('shrink show');
-    });
-
-
-
-    // ------------------------------------------------------ //
-    // For demo purposes, can be deleted
-    // ------------------------------------------------------ //
-
-    var stylesheet = $('link#theme-stylesheet');
-    $( "<link id='new-stylesheet' rel='stylesheet'>" ).insertAfter(stylesheet);
-    var alternateColour = $('link#new-stylesheet');
-
-    if ($.cookie("theme_csspath")) {
-        alternateColour.attr("href", $.cookie("theme_csspath"));
-    }
-
-    $("#colour").change(function () {
-
-        if ($(this).val() !== '') {
-
-            var theme_csspath = 'css/style.' + $(this).val() + '.css';
-
-            alternateColour.attr("href", theme_csspath);
-
-            $.cookie("theme_csspath", theme_csspath, { expires: 365, path: document.URL.substr(0, document.URL.lastIndexOf('/')) });
-
-        }
-
-        return false;
-    });
-
-});
-
-
-Cookies.set('active', 'true');
->>>>>>> 216d4fe7dcb3d703548dca16ba6f8c694b2f85a7
+Cookies.set("active", "true");
