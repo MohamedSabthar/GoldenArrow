@@ -5,7 +5,11 @@
             </div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item">
+<<<<<<< HEAD
                     <a href="#" class="sidebar-link text-muted ">
+=======
+                    <a href="/accountant/dashboard" class="sidebar-link text-muted ">
+>>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                         <i class="o-home-1 mr-3 text-gray"></i>
                         <span>Dashboard</span>
                     </a>
@@ -16,12 +20,20 @@
                         <span>View Players</span></a>
                 </li>
                 <li class="sidebar-list-item">
+<<<<<<< HEAD
                     <a href="/accountant" class="sidebar-link text-muted ">
+=======
+                    <a href="/accountant/payments" class="sidebar-link text-muted ">
+>>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                         <i class="fab fa-amazon-pay mr-3 text-gray"></i>
                         <span>Players Payment</span></a>
                 </li>
                 <li class="sidebar-list-item">
+<<<<<<< HEAD
                     <a href="#" class="sidebar-link text-muted">
+=======
+                    <a href="/accountant/trainers" class="sidebar-link text-muted">
+>>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                         <i class="far fa-credit-card  mr-3 text-gray"></i>
                         <span>Trainers Salary</span></a>
                 </li>

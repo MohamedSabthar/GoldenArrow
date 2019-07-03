@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="all,follow" />
     <!-- Bootstrap CSS-->
+<<<<<<< HEAD
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -23,6 +24,21 @@
     <link rel="stylesheet" href="/css/custom.css" />
     <!-- Favicon-->
     <link rel="shortcut icon" href="/img/favicon.png?3" />
+=======
+    <link rel="stylesheet" href="<?php echo base_url("/vendor/bootstrap/css/bootstrap.min.css");?>" />
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.0/css/all.css" crossorigin="anonymous" />
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800" />
+    <!-- orion icons-->
+    <link rel="stylesheet" href="<?php echo base_url("/css/orionicons.css");?>" />
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="<?php echo base_url("/css/style.default.css");?>" id="theme-stylesheet" />
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="<?php echo base_url("/css/custom.css");?>" />
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="<?php echo base_url("/img/favicon.png?3");?>" />
+>>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
 </head>
 
 <body>
@@ -30,14 +46,24 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
             <a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a>
+<<<<<<< HEAD
             <a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base">
+=======
+            <a href="accountant/dashboard" class="navbar-brand font-weight-bold text-uppercase text-base">
+>>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                 <?=$dashboardTitle?>
             </a>
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
                 <li class="nav-item dropdown ml-auto">
+<<<<<<< HEAD
                     <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" class="nav-link dropdown-toggle">
                         <img src="/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;"
+=======
+                    <a id="userInfo" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" class="nav-link dropdown-toggle">
+                        <img src="<?=base_url('/img/avatar-6.jpg')?>" alt="<?=$userName?>" style="max-width: 2.5rem;"
+>>>>>>> c310ba83c98a052ddcc0d01d2b2977760a805bd3
                             class="img-fluid rounded-circle shadow" />
                     </a>
 
