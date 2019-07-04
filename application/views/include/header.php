@@ -62,8 +62,10 @@
                             <small><?=$userRole?></small>
                         </a>
                         <div class="dropdown-divider"></div>
+                        <?php if($this->session->userData('userRole')!='accountant'):?>
                         <a href="#" class="dropdown-item">Profile Settings</a>
                         <div class="dropdown-divider"></div>
+                        <?php endif?>
                         <a href="login.html" class="dropdown-item">Logout</a>
                     </div>
                 </li>
