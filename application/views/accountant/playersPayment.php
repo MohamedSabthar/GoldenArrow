@@ -30,13 +30,13 @@
                     </div>
                     <!-- end of search player -->
 
-
+                    <!-- notification for account block -->
                     <?php if($this->session->flashdata('block')): ?>
-                        <small class="d-block text-uppercase badge badge-success p-2 mb-3">
-                            <?=$this->session->flashdata('block')?>
-                        </small>
-                 
-                <?php endif?>
+                    <small class="d-block text-uppercase alert alert-success text-center p-2 mb-3">
+                        <?=$this->session->flashdata('block')?>
+                    </small>
+
+                    <?php endif?>
 
                     <?php if (!empty($playerHistory) && $playerHistory!=-1):?>
                     <!-- player payment history -->
@@ -51,19 +51,20 @@
                                         Add Payment
                                     </button>
 
-                                  
+
 
                                     <form method="POST" action="/accountant/block" class="d-inline">
                                         <input name="paymentId" type="hidden" value=<?=$playerHistory[0]->userId?> />
                                         <input name="accountStatus" type="hidden"
                                             value=<?=$playerHistory[0]->accountStatus?> />
 
-                                        <button type="submit" class="btn 
-                                            <?php if ($playerHistory[0]->accountStatus==1) {
-    echo "btn-outline-danger";
-} else {
-    echo "btn-outline-success";
-}?> mr-2" style="font-size:0.7rem">
+                                        <button type="submit" 
+                                                class=" <?php if ($playerHistory[0]->accountStatus==1):?>
+                                                            <?="btn btn-outline-danger  mr-2"?>
+                                                        <?php else:?>
+                                                            <?=" btn btn-outline-success  mr-2"?>
+                                                        <?php endif?>"
+                                                style="font-size:0.7rem">
                                             <?php if ($playerHistory[0]->accountStatus==1):?>
                                             <!-- if account is active -->
                                             Block
@@ -104,7 +105,8 @@
                                             <!-- delete button -->
                                             <form method="POST" action="/accountant/delete" class="d-inline">
                                                 <input name="paymentId" type="hidden" value=<?=$records->paymentId?> />
-                                                <button onClick="return confirm('Are you sure you want to Delete ?')" type="submit" class="btn btn-outline-danger"><i
+                                                <button onClick="return confirm('Are you sure you want to Delete ?')"
+                                                    type="submit" class="btn btn-outline-danger"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
@@ -170,7 +172,8 @@
                                             <!-- delete button -->
                                             <form method="POST" action="/accountant/delete" class="d-inline">
                                                 <input name="paymentId" type="hidden" value=<?=$records->paymentId?> />
-                                                <button onClick="return confirm('Are you sure you want to Delete ?')" type="submit" class="btn btn-outline-danger"><i
+                                                <button onClick="return confirm('Are you sure you want to Delete ?')"
+                                                    type="submit" class="btn btn-outline-danger"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>

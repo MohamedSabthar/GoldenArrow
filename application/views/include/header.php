@@ -35,17 +35,17 @@
             </a>
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
 
+                <!-- notifications -->
                 <?php if($this->session->flashdata('notification')): ?>
                 <li class="nav-item dropdown mr-3">
-                    <a href="#" class="dropdown-item">
-                        <small class="d-block text-uppercase badge badge-success p-2">
-                            <?=$this->session->flashdata('notification')?>
-                        </small>
+                    <a href="#" class=" text-gray-400 px-1">
+                        <i class="fa fa-bell "></i>
                     </a>
+                    <small class=" text-uppercase alert alert-success text-center  p-2">
+                        <?=$this->session->flashdata('notification')?>
+                    </small>
                 </li>
                 <?php endif?>
-
-
 
                 <li class="nav-item dropdown ml-auto">
                     <a id="userInfo" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
