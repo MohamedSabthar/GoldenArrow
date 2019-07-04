@@ -6,19 +6,17 @@
                 <div class="col-lg-8">
                     <div class="card mb-5 mb-lg-0">
                         <div class="card-header">
-                            <img src="img/avatar-1.jpg" alt="..." style="max-width: 3rem"
-                                class="rounded-circle mx-3 my-2 my-lg-0" />
+                            <img src="img/avatar-1.jpg" alt="..." style="max-width: 3rem" class="rounded-circle mx-3 my-2 my-lg-0" />
                             <h2 class="h6 mb-0 text-uppercase">Profile</h2>
                         </div>
 
                         <div class="card-body">
-<!--  -->
-                 <!-- <?php 
-                //echo $data;
-                // foreach($data as $row){
-                    ?> -->
-                            <div
-                                class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
+                            <!--  -->
+                            <!-- <?php
+                                    //echo $data;
+                                    // foreach($data as $row){
+                                    ?> -->
+                            <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
                                 <div class="left d-flex align-items-center">
 
 
@@ -36,8 +34,7 @@
                                     <h5>ASDFG</h5>
                                 </div>
                             </div>
-                            <div
-                                class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
+                            <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
                                 <div class="left d-flex align-items-center">
                                     <div class="icon icon-lg shadow mr-3 text-gray">
                                         <i class="fas fa-clipboard-check"></i>
@@ -52,8 +49,7 @@
                                     <h5>ASDFG</h5>
                                 </div>
                             </div>
-                            <div
-                                class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
+                            <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
                                 <div class="left d-flex align-items-center">
                                     <div class="icon icon-lg shadow mr-3 text-gray">
                                         <i class="fas fa-clipboard-check"></i>
@@ -68,8 +64,7 @@
                                     <h5>ASDFG</h5>
                                 </div>
                             </div>
-                            <div
-                                class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
+                            <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
                                 <div class="left d-flex align-items-center">
                                     <div class="icon icon-lg shadow mr-3 text-gray">
                                         <i class="fas fa-clipboard-check"></i>
@@ -85,9 +80,10 @@
                                 </div>
                             </div>
                             <?php
-                // }
-                //?>
-<!--  -->
+                            // }
+                            //
+                            ?>
+                            <!--  -->
                         </div>
 
                     </div>

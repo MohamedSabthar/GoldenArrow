@@ -11,27 +11,27 @@
 						<div class="card-body">
 							<?php echo validation_errors(); ?>
 							<?php echo form_open('AdminController/addTournament', 'class="form-horizontal"'); ?>
-								<div class="form-group row">
-									<label class="col-md-3 form-control-label">Name</label>
-									<div class="col-md-9">
-										<input type="text" name='tournamentName' class="form-control">
-									</div>
+							<div class="form-group row">
+								<label class="col-md-3 form-control-label">Name</label>
+								<div class="col-md-9">
+									<input type="text" name='tournamentName' class="form-control">
 								</div>
+							</div>
 
 
-								<div class="form-group row">
-									<label class="col-md-3 form-control-label">Place</label>
-									<div class="col-md-9">
-										<input type="text" name='tournamentPlace' class="form-control">
-									</div>
+							<div class="form-group row">
+								<label class="col-md-3 form-control-label">Place</label>
+								<div class="col-md-9">
+									<input type="text" name='tournamentPlace' class="form-control">
 								</div>
+							</div>
 
-								<div class="line"></div>
-								<div class="form-group row">
-									<div class="col-md-9 ml-auto">
-										<button type="submit" class="btn btn-primary">Save</button>
-									</div>
+							<div class="line"></div>
+							<div class="form-group row">
+								<div class="col-md-9 ml-auto">
+									<button type="submit" class="btn btn-primary">Save</button>
 								</div>
+							</div>
 							</form>
 						</div>
 					</div>

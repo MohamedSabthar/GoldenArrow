@@ -68,7 +68,7 @@
 									<input type="text" name='matchScoreOpponent' class="form-control">
 								</div>
 							</div>
-							
+
 							<div class="line"></div>
 							<div class="form-group row">
 								<div class="col-md-9 ml-auto">
