@@ -7,6 +7,8 @@ class AccountantController extends CI_Controller
         parent::__construct();
         $this->data = array();
         $this->load->library('session');
+
+        // security route to prevent unauthorized login
         if($this->session->userdata('userRole')!='accountant') return redirect("/");
     }
 
@@ -118,7 +120,7 @@ class AccountantController extends CI_Controller
         $this->load->model('AccountantModel');
         $config["total_rows"] = $this->AccountantModel->numberOfPlayers();
         $config["per_page"] = 5;
-        $config["uri_segment"] = 2;
+        $config["uri_segment"] = 3;
         $config['page_query_string'] = false;
         $config['query_string_segment'] = '';
         $config['full_tag_open'] = '<ul class="pagination pagination-sm" style="font-size:1.1em">';

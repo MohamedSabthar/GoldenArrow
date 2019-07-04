@@ -54,13 +54,13 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 
 //accountant routes
-$route['accountant/payments'] ='/accountantController';
-$route['accountant/(:num)'] = '/accountantController/index';
-$route['accountant/delete']='/accountantController/deletePaymentRecord';
-$route['accountant/block']='/accountantController/blockPlayerAccount';
-$route['accountant/players']='/accountantController/viewPlayers';
-$route['accountant/add']='/accountantController/addPaymentRecord';
-$route['accountant/update']='/accountantController/updatePaymentRecord';
-$route['accountant/trainers']='/trainerPaymentController';
-$route['accountant/trainer/add']='/trainerPaymentController/addSalaryRecord';
-$route['accountant/dashboard'] ='/AccountantReportController';
+$route['accountant/payments'] ='accountant/accountantController';
+$route['accountant/(:num)'] = 'accountant/accountantController/index';
+$route['accountant/delete']='accountant/accountantController/deletePaymentRecord';
+$route['accountant/block']='accountant/accountantController/blockPlayerAccount';
+$route['accountant/players']='accountant/accountantController/viewPlayers';
+$route['accountant/add']='accountant/accountantController/addPaymentRecord';
+$route['accountant/update']='accountant/accountantController/updatePaymentRecord';
+$route['accountant/trainers']='accountant/trainerPaymentController';
+$route['accountant/trainer/add']='accountant/trainerPaymentController/addSalaryRecord';
+$route['accountant/dashboard'] ='accountant/AccountantReportController';
