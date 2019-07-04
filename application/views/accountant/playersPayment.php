@@ -58,13 +58,11 @@
                                         <input name="accountStatus" type="hidden"
                                             value=<?=$playerHistory[0]->accountStatus?> />
 
-                                        <button type="submit" 
-                                                class=" <?php if ($playerHistory[0]->accountStatus==1):?>
+                                        <button type="submit" class=" <?php if ($playerHistory[0]->accountStatus==1):?>
                                                             <?="btn btn-outline-danger  mr-2"?>
                                                         <?php else:?>
                                                             <?=" btn btn-outline-success  mr-2"?>
-                                                        <?php endif?>"
-                                                style="font-size:0.7rem">
+                                                        <?php endif?>" style="font-size:0.7rem">
                                             <?php if ($playerHistory[0]->accountStatus==1):?>
                                             <!-- if account is active -->
                                             Block
