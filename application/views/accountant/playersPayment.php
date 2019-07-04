@@ -30,6 +30,14 @@
                     </div>
                     <!-- end of search player -->
 
+
+                    <?php if($this->session->flashdata('block')): ?>
+                        <small class="d-block text-uppercase badge badge-success p-2 mb-3">
+                            <?=$this->session->flashdata('block')?>
+                        </small>
+                 
+                <?php endif?>
+
                     <?php if (!empty($playerHistory) && $playerHistory!=-1):?>
                     <!-- player payment history -->
                     <div class="card">
@@ -42,6 +50,8 @@
                                         style="font-size:0.7rem">
                                         Add Payment
                                     </button>
+
+                                  
 
                                     <form method="POST" action="/accountant/block" class="d-inline">
                                         <input name="paymentId" type="hidden" value=<?=$playerHistory[0]->userId?> />

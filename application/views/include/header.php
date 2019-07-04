@@ -29,13 +29,27 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
             <a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a>
-            <a href="accountant/dashboard" class="navbar-brand font-weight-bold text-uppercase text-base">
+            <a href="/<?=$this->session->userData('userRole')?>/dashboard"
+                class="navbar-brand font-weight-bold text-uppercase text-base">
                 <?=$dashboardTitle?>
             </a>
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+
+                <?php if($this->session->flashdata('notification')): ?>
+                <li class="nav-item dropdown mr-3">
+                    <a href="#" class="dropdown-item">
+                        <small class="d-block text-uppercase badge badge-success p-2">
+                            <?=$this->session->flashdata('notification')?>
+                        </small>
+                    </a>
+                </li>
+                <?php endif?>
+
+
+
                 <li class="nav-item dropdown ml-auto">
-                    <a id="userInfo" href="#" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false" class="nav-link dropdown-toggle">
+                    <a id="userInfo" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        class="nav-link dropdown-toggle">
                         <img src="<?=base_url('/img/avatar-6.jpg')?>" alt="<?=$userName?>" style="max-width: 2.5rem;"
                             class="img-fluid rounded-circle shadow" />
                     </a>

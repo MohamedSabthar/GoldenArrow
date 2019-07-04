@@ -253,7 +253,7 @@ function setIdToAddPaymentModel(trainerId) {
 }
 
 function viewHistory(trainerId) {
-    $.post('/trainerPaymentController/viewSalaryHistory', {
+    $.post('/accountant/trainer/salary', {
             trainerId
         },
         function(result) {

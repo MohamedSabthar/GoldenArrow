@@ -53,9 +53,8 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 
-//accountant routes
+// accountant routes
 $route['accountant/payments'] ='accountant/accountantController';
-$route['accountant/(:num)'] = 'accountant/accountantController/index';
 $route['accountant/delete']='accountant/accountantController/deletePaymentRecord';
 $route['accountant/block']='accountant/accountantController/blockPlayerAccount';
 $route['accountant/players']='accountant/accountantController/viewPlayers';
@@ -64,3 +63,10 @@ $route['accountant/update']='accountant/accountantController/updatePaymentRecord
 $route['accountant/trainers']='accountant/trainerPaymentController';
 $route['accountant/trainer/add']='accountant/trainerPaymentController/addSalaryRecord';
 $route['accountant/dashboard'] ='accountant/AccountantReportController';
+$route['accountant/trainer/salary']='accountant/trainerPaymentController/viewSalaryHistory';
+$route['accountant/trainer/delete']='accountant//trainerPaymentController/deleteSalaryRecord';
+
+// accountant pagination routes
+$route['accountant/trainers/(:num)']='/accountant/trainerPaymentController/index';
+$route['accountant/payments/(:num)']='/accountant/accountantController/index';
+$route['accountant/players/(:num)']='/accountant/accountantController/viewPlayers';
