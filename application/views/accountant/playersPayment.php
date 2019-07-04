@@ -318,7 +318,7 @@
         </div>
         <!-- end of Add payment model -->
     </div>
-</div>
+
 
 <script>
 //script to set values to the modal

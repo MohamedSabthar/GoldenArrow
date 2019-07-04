@@ -161,7 +161,7 @@
         <!-- end of Add payment model -->
 
     </div>
-</div>
+
 
 <script>
 function setIdToAddPaymentModel(playerId) {

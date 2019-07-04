@@ -1,4 +1,4 @@
-</div>
+
 
 <!-- footer -->
 <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
@@ -15,7 +15,7 @@
         </div>
     </div>
 </footer>
-
+</div>
 </div>
 </div>
 <!-- JavaScript files-->

@@ -240,7 +240,7 @@
 
 
     </div>
-</div>
+
 
 <script>
 function setIdToAddPaymentModel(trainerId) {
