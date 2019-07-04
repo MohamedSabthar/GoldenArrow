@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">GoldenArrow</p>
+                <p class="mb-2 mb-md-0"> &gt&gt&gt-Golden-Arrow-&gt </p>
             </div>
             <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">
