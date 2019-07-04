@@ -7,6 +7,8 @@ class AdminController extends CI_Controller
 		parent::__construct();
 		$this->load->library('session');
 		if ($this->session->userdata('userRole') != 'admin') return redirect("/");
+
+		$this->load->model('TrainerModel');
 	}
 
 	public function index()
@@ -45,6 +47,25 @@ class AdminController extends CI_Controller
 	public function viewPracticeSessions()
 	{
 		// to be implemented by another team member
+		$this->load->model('TrainerModel');
+
+		// setting header
+		$header = array(
+			"title" => "Administrator",
+			"dashboardTitle" => "Administrator Dashboard",
+			"userName" => "Administrator Name",
+			"userRole" => "Administrator"
+		);
+
+		$data['active'] = "practice_sessions";
+
+		$data['result'] = $this->TrainerModel->getAllData();
+
+		// load views
+		$this->load->view('include/header', $header);
+		$this->load->view('admin/sidebar', $data);
+		$this->load->view('admin/practice_sessions', $data);
+		$this->load->view('include/footer');
 	}
 
 	public function viewMatches()
@@ -997,4 +1018,30 @@ class AdminController extends CI_Controller
 		$this->load->view('admin/day', $data);
 		$this->load->view('include/footer');
 	}
+
+	//CRUD for practice sessions
+	public function createPracticeSession()
+	{
+		$this->TrainerModel->createData();
+		redirect("adminController/viewPracticeSessions");
+	}
+
+	public function editPracticeSession($ps_id)
+	{
+		$data['result'] = $this->TrainerModel->getData($this->input->post('ps_id'));
+		$this->load->view('adminController/viewPracticeSessions', $data);
+	}
+
+	public function updatePracticeSession($ps_id)
+	{
+		$this->TrainerModel->updateData($ps_id);
+		redirect("adminController/viewPracticeSessions");
+	}
+
+	public function deletePracticeSession($ps_id)
+	{
+		$this->TrainerModel->deleteData($ps_id);
+		redirect("adminController/viewPracticeSessions");
+	}
+	//End of CRUD for practice sessions
 }
