@@ -41,7 +41,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="h6 text-uppercase mb-0">Attackers - Targets</h3>
+                                    <h3 class="h6 text-uppercase mb-0">Attackers</h3>
                                 </div>
 
                                 <div class="card-body">
@@ -109,7 +109,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="h6 text-uppercase mb-0">Midfielders - Targets</h3>
+                                    <h3 class="h6 text-uppercase mb-0">Midfielders</h3>
                                 </div>
 
                                 <div class="card-body">
@@ -177,7 +177,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="h6 text-uppercase mb-0">Defenders - Targets</h3>
+                                    <h3 class="h6 text-uppercase mb-0">Defenders</h3>
                                 </div>
 
                                 <div class="card-body">
@@ -245,7 +245,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="h6 text-uppercase mb-0">Goal Keeper - Targets</h3>
+                                    <h3 class="h6 text-uppercase mb-0">Goal Keeper</h3>
                                 </div>
 
                                 <div class="card-body">
