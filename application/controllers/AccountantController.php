@@ -10,7 +10,6 @@ class AccountantController extends CI_Controller
 		if ($this->session->userdata('userRole') != 'accountant') return redirect("/");
 	}
 
-
 	public function index()
 	{
 		$header = array(
@@ -76,7 +75,6 @@ class AccountantController extends CI_Controller
 		redirect('/accountantController/index', 'refresh'); //redirecting to dashboard
 	}
 
-
 	public function updatePaymentRecord()
 	{
 		$this->load->model('AccountantModel');
@@ -86,7 +84,6 @@ class AccountantController extends CI_Controller
 		redirect('/accountantController/index', 'refresh'); //redirecting to dashboard
 	}
 
-
 	public function addPaymentRecord()
 	{
 		$this->load->model('AccountantModel');
@@ -95,7 +92,6 @@ class AccountantController extends CI_Controller
 		redirect('/accountantController/index', 'refresh'); //redirecting to dashboard
 	}
 
-
 	public function blockPlayerAccount()
 	{
 		$this->load->model('AccountantModel');
@@ -103,7 +99,6 @@ class AccountantController extends CI_Controller
 
 		redirect('/accountantController/index', 'refresh'); //redirecting to dashboard
 	}
-
 
 	public function viewPlayers()
 	{

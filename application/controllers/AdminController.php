@@ -5,6 +5,8 @@ class AdminController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library('session');
+		if ($this->session->userdata('userRole') != 'admin') return redirect("/");
 	}
 
 	public function index()

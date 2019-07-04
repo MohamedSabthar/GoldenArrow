@@ -10,7 +10,6 @@ class LoginController extends CI_Controller
 		//  $this->load->view('userLogin');
 	}
 
-
 	public function login()
 	{
 		$this->load->view('userLogin');
