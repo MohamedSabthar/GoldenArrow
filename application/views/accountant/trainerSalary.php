@@ -197,10 +197,6 @@
         </div>
         <!-- end of pay salary model -->
 
-
-
-
-
         <!-- Update payment model -->
         <div id="updatePayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             class="modal fade text-left" style="display: none;" aria-hidden="true">
@@ -244,7 +240,7 @@
 
 
     </div>
-</div>
+
 
 <script>
 function setIdToAddPaymentModel(trainerId) {
@@ -253,7 +249,7 @@ function setIdToAddPaymentModel(trainerId) {
 }
 
 function viewHistory(trainerId) {
-    $.post('/trainerPaymentController/viewSalaryHistory', {
+    $.post('/accountant/trainer/salary', {
             trainerId
         },
         function(result) {

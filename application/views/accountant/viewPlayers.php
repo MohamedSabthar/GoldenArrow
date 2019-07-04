@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6 mb-3">
 
-                <!-- search player form -->
+                    <!-- search player form -->
                     <div class="card mb-4">
                         <div class="card-header">
                             <h3 class="h6 text-uppercase mb-0">Search Players</h3>
@@ -50,12 +50,12 @@
                                         class="col-lg-9 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
 
                                         <p class="mb-0 mt-3 mt-lg-0 mx-5">
-                                        <button type="button" data-toggle="modal" data-target="#addPayment"
-                                        class="ml-3 btn btn-outline-success"
-                                        onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
-                                        style="font-size:0.7rem">
-                                        Add Payment
-                                    </button>
+                                            <button type="button" data-toggle="modal" data-target="#addPayment"
+                                                class="ml-3 btn btn-outline-success"
+                                                onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
+                                                style="font-size:0.7rem">
+                                                Add Payment
+                                            </button>
                                         </p>
                                     </div>
                                 </div>
@@ -64,13 +64,15 @@
                         <?php endforeach?>
                         <!-- end of player search result -->
 
-                        <?php elseif ($searchPlayers==-1):?><!-- if not input presented -->
+                        <?php elseif ($searchPlayers==-1):?>
+                        <!-- if not input presented -->
                         <div class="card ">
                             <div class="card-body">
                                 <p class="text-center text-danger">Name or Player Id needed</p>
                             </div>
                         </div>
-                        <?php else:?><!-- if no result found -->
+                        <?php else:?>
+                        <!-- if no result found -->
                         <div class="card">
                             <div class="card-body">
                                 <p class="text-center">No Matches found</p>
@@ -98,12 +100,12 @@
                                     class="col-lg-9 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
 
                                     <p class="mb-0 mt-3 mt-lg-0 mx-5">
-                                    <button type="button" data-toggle="modal" data-target="#addPayment"
-                                        class="ml-3 btn btn-outline-success"
-                                        onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
-                                        style="font-size:0.7rem">
-                                        Add Payment
-                                    </button>
+                                        <button type="button" data-toggle="modal" data-target="#addPayment"
+                                            class="ml-3 btn btn-outline-success"
+                                            onClick="setIdToAddPaymentModel('<?=$player->userId?>')"
+                                            style="font-size:0.7rem">
+                                            Add Payment
+                                        </button>
                                     </p>
                                 </div>
                             </div>
@@ -159,12 +161,11 @@
         <!-- end of Add payment model -->
 
     </div>
-</div>
+
 
 <script>
 function setIdToAddPaymentModel(playerId) {
-            document.getElementById("addPlayertId").value = playerId;
-            console.log(playerId)
-        }
-
-        </script>
+    document.getElementById("addPlayertId").value = playerId;
+    console.log(playerId)
+}
+</script>
