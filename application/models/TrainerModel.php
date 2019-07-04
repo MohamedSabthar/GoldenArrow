@@ -77,10 +77,17 @@ class trainerModel extends CI_Model
 		return $query->row();
 	}
 
+	function getDataTargetResult($t_id)
+	{
+		$this->db->where('t_id', $t_id);
+		$query = $this->db->get('targets');
+		return $query->result();
+	}
+
 	function updateDataTargetAtt($t_id)
 	{
 		$data = array(
-			't_id' => $this->input->post('t_id'),
+			't_id' => $t_id,
 			'att_goals' => $this->input->post('att_goals'),
 			'att_assists' => $this->input->post('att_assists'),
 		);
@@ -91,7 +98,7 @@ class trainerModel extends CI_Model
 	function updateDataTargetMid($t_id)
 	{
 		$data = array(
-			't_id' => $this->input->post('t_id'),
+			't_id' => $t_id,
 			'mid_assists' => $this->input->post('mid_assists'),
 			'mid_chances' => $this->input->post('mid_chances'),
 		);
@@ -102,7 +109,7 @@ class trainerModel extends CI_Model
 	function updateDataTargetDef($t_id)
 	{
 		$data = array(
-			't_id' => $this->input->post('t_id'),
+			't_id' => $t_id,
 			'def_balls_won' => $this->input->post('def_balls_won'),
 			'def_tackles' => $this->input->post('def_tackles'),
 		);
@@ -113,7 +120,7 @@ class trainerModel extends CI_Model
 	function updateDataTargetGK($t_id)
 	{
 		$data = array(
-			't_id' => $this->input->post('t_id'),
+			't_id' => $t_id,
 			'clean_sheets' => $this->input->post('clean_sheets'),
 			'saves' => $this->input->post('saves'),
 		);

@@ -654,6 +654,10 @@ class AdminController extends CI_Controller
 		$this->load->model('AdminModel');
 		$data['trainer'] = $this->AdminModel->getTrainer($userId);
 
+		$this->load->model('TrainerModel');
+		$data['result'] = $this->TrainerModel->getDataTargetResult($userId);
+
+
 		// header
 		$trainerName = $data['trainer']->name;
 		$header = array(
@@ -1044,4 +1048,41 @@ class AdminController extends CI_Controller
 		redirect("adminController/viewPracticeSessions");
 	}
 	//End of CRUD for practice sessions
+
+	//TODO: Change these
+	//CRUD for targets
+
+	public function edit_target($t_id)
+	{
+		$data['result'] = $this->TrainerModel->getDataTarget($this->input->post('t_id'));
+		$this->load->view('admin/trainer/profile', $data);
+	}
+
+	//Update modal for attackers
+	public function update_target_att($t_id)
+	{
+		$this->TrainerModel->updateDataTargetAtt($t_id);
+		redirect("AdminController/viewTrainer/$t_id");
+	}
+
+	//Update modal for midfielders
+	public function update_target_mid($t_id)
+	{
+		$this->TrainerModel->updateDataTargetMid($t_id);
+		redirect("AdminController/viewTrainer/$t_id");
+	}
+
+	//Update modal for defenders
+	public function update_target_def($t_id)
+	{
+		$this->TrainerModel->updateDataTargetDef($t_id);
+		redirect("AdminController/viewTrainer/$t_id");
+	}
+
+	//Update modal for goal keeper
+	public function update_target_gk($t_id)
+	{
+		$this->TrainerModel->updateDataTargetGK($t_id);
+		redirect("AdminController/viewTrainer/$t_id");
+	}
 }

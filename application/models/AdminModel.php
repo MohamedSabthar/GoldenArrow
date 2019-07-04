@@ -269,6 +269,21 @@ class AdminModel extends CI_Model
 		);
 
 		$this->db->insert('trainerData', $trainerData);
+
+		// add empty target record
+		$targetData = array(
+			't_id' => $result->userId,
+			'att_goals' => 0,
+			'att_assists' => 0,
+			'mid_assists' => 0,
+			'mid_chances' => 0,
+			'def_balls_won' => 0,
+			'def_tackles' => 0,
+			'clean_sheets' => 0,
+			'saves' => 0,
+		);
+
+		$this->db->insert('targets', $targetData);
 	}
 
 	public function editTrainer($userId)
