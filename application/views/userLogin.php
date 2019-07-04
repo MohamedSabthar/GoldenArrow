@@ -30,7 +30,7 @@
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-5 col-lg-7 mx-auto mb-5 mb-lg-0">
-            <div class="pr-lg-5"><img src="/img/Soccer.jpg" alt="" class="img-fluid"></div>
+            <div class="pr-lg-5"><img src="/img/Soccer.png" alt="" class="img-fluid"></div>
           </div>
           <div class="col-lg-5 px-lg-4">
             <h1 class="text-base text-primary text-uppercase mb-4">Golden Arrow mAster Football CLub</h1>
