@@ -21,7 +21,7 @@
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label">Password</label>
 								<div class="col-md-9">
-									<input type="password" name='password' class="form-control" value='<?php echo $player->password ?>''>
+									<input type="password" name='password' class="form-control">
 									</div>
 								</div>
 
