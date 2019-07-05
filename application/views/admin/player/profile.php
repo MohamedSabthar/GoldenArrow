@@ -42,7 +42,7 @@
 								<h6>
 									Date of birth
 								</h6>
-								<?php echo $player->playerDOB ?>
+								<?php echo $player->DOB ?>
 							</p>
 						</div>
 					</div>
