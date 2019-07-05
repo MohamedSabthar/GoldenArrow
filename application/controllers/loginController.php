@@ -20,7 +20,7 @@
                
                 if($val==null)
                 {
-                    echo "User Name or Password you entered is incorrect";
+                    
                     $this->session->set_flashdata('login_fail','Invalid Username/Pasword');
                     redirect('/');
                 }

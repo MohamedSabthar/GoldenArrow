@@ -35,7 +35,7 @@
           <div class="col-lg-5 px-lg-4">
             <h1 class="text-base text-primary text-uppercase mb-4">Golden Arrow mAster Football CLub</h1>
             <h2 class="mb-4">Welcome !</h2>
-            <p class="text-muted">Welcome to the official Golden Arrow Football Club Web Platform. Collobrate with the trainees and players and mantain a virtual environment. Recieve trainig session updates, match scheduels for your finger tips. Create an online account and browse through our stunning website.</p>
+            <p class="text-muted">Welcome to the official Golden Arrow Football Club Web Platform. Collobrate with the trainees and players and mantain a virtual environment. Recieve trainig session updates, match scheduels instantly.</p>
           <?php if($error=$this->session->flashdata('login_fail')): ?>
            
           <span class="text-danger"> <?=$error ?> </span>
@@ -55,7 +55,7 @@
             </form>
           </div>
         </div>
-        <p class="mt-5 mb-0 text-gray-400 text-center">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Group No:13</a>for the moduel Rapid Application Development</p>
+        <p class="mt-5 mb-0 text-gray-400 text-center">Design by <a href="#" class="external text-gray-400">&copy Crew 13 </a></p>
         <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)                 -->
       </div>
     </div>
