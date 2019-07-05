@@ -177,7 +177,7 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleInputEmail1">Dribbling</label>
                                                                         <select class="custom-select" name="dribbling" >
-                                                                            <option value="<?php echo $row->dribbling ?>"><?php echo $row->dribbling ?></option>
+                                                                            <option value="<?php echo $row->dribbling ?>" disabled><?php echo $row->dribbling ?></option>
                                                                             <option value="Precision Dribbling">Precision Dribbling</option>
                                                                             <option value="Obstacle Course">Obstacle Course</option>
                                                                             <option value="Speed Dribbling">Speed Dribbling</option>
@@ -186,7 +186,7 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleInputEmail1" >Passing</label>
                                                                         <select class="custom-select" name="passing">
-                                                                            <option value="<?php echo $row->passing ?>"><?php echo $row->passing ?></option>
+                                                                            <option value="<?php echo $row->passing ?>" disabled><?php echo $row->passing ?></option>
                                                                             <option value="Crossing Scenarios">Crossing Scenarios</option>
                                                                             <option value="1-2 Passing">1-2 Passing</option>
                                                                             <option value="Timed Through Pass">Timed Through Pass</option>
@@ -195,7 +195,7 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleInputEmail1">Shooting</label>
                                                                         <select class="custom-select" name="shooting">
-                                                                            <option value="<?php echo $row->shooting ?>"><?php echo $row->shooting ?></option>
+                                                                            <option value="<?php echo $row->shooting ?>" disabled><?php echo $row->shooting ?></option>
                                                                             <option value="First Touch Volley">First Touch Volley</option>
                                                                             <option value="Speed Shooting">Speed Shooting</option>
                                                                             <option value="Long Shot Practice">Long Shot Practice</option>
@@ -204,7 +204,7 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleInputEmail1">Defending</label>
                                                                         <select class="custom-select" name="defending">
-                                                                            <option value="sele<?php echo $row->defending ?>ct"><?php echo $row->defending ?></option>
+                                                                            <option value="<?php echo $row->defending ?>" disabled><?php echo $row->defending ?></option>
                                                                             <option value="Pass Interception">Pass Interception</option>
                                                                             <option value="Tackle Practice">Tackle Practice</option>
                                                                             <option value="Defending Scenarios">Defending Scenarios</option>
@@ -213,7 +213,7 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleInputEmail1">Set Pieces</label>
                                                                         <select class="custom-select" name="set pieces">
-                                                                            <option value="<?php echo $row->set_pieces ?>"><?php echo $row->set_pieces ?></option>
+                                                                            <option value="<?php echo $row->set_pieces ?>" disabled><?php echo $row->set_pieces ?></option>
                                                                             <option value="Precision Penalty">Precision Penalty</option>
                                                                             <option value="Direct Free Kick">Direct Free Kick</option>
                                                                             <option value="Pinpoint Crossing">Pinpoint Crossing</option>
@@ -222,7 +222,7 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleInputEmail1">Goal Keeper</label>
                                                                         <select class="custom-select" name="goal keeper">
-                                                                            <option value="<?php echo $row->goal_keeper ?>"><?php echo $row->goal_keeper ?></option>
+                                                                            <option value="<?php echo $row->goal_keeper ?>" disabled><?php echo $row->goal_keeper ?></option>
                                                                             <option value="Artillery Saving">Artillery Saving</option>
                                                                             <option value="Keeper Throws">Keeper Throws</option>
                                                                             <option value="1-on-1 Against Striker">1-on-1 Against Striker</option>
@@ -248,3 +248,4 @@
                 </div>
             </div>
         </section>                
+        </div>

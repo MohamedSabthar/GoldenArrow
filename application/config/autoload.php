@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |  Auto-load Helper Files
 | -------------------------------------------------------------------
 | Prototype:
-|
+|	
 |	$autoload['helper'] = array('url', 'file');
 */
 $autoload['helper'] = array('url');
@@ -104,7 +104,7 @@ $autoload['helper'] = array('url');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('paypal');
+$autoload['config'] = array('Paypal');
 
 /*
 | -------------------------------------------------------------------

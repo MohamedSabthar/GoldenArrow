@@ -6,6 +6,8 @@ class AccountantReportController extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
+
+        // security route to prevent unauthorized login
         if($this->session->userdata('userRole')!='accountant') return redirect("/");
 
     }
@@ -44,7 +46,7 @@ class AccountantReportController extends CI_Controller
        
         $html =  "file content here";
 
-$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+        $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
 
       

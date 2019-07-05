@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class trainerController extends CI_Controller {
+class TrainerController extends CI_Controller {
     public function __construct() {
         parent:: __construct();
         $this->load->model('trainerModel');
@@ -69,7 +69,7 @@ class trainerController extends CI_Controller {
 
         //loading view
         $this->load->view('include/header', $header);
-        $this->load->view('trainer/sideBar/sidebarActiveTargets');
+    	$this->load->view('trainer/sideBar/sidebarActiveTargets');
         $this->load->view('trainer/targets', $data);
         $this->load->view('include/footer');
     }

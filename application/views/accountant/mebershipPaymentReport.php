@@ -5,24 +5,29 @@
         font-size: 24pt;
         text-decoration: underline;
     }
+
     p.first {
         color: #003300;
         font-family: helvetica;
         font-size: 12pt;
     }
+
     p.first span {
         color: #006600;
         font-style: italic;
     }
+
     p#second {
-        color: rgb(00,63,127);
+        color: rgb(00, 63, 127);
         font-family: times;
         font-size: 12pt;
         text-align: justify;
     }
-    p#second > span {
+
+    p#second>span {
         background-color: #FFFFAA;
     }
+
     table.first {
         color: #003300;
         font-family: helvetica;
@@ -33,13 +38,16 @@
         border-bottom: 3px solid blue;
         background-color: #ccffcc;
     }
+
     td {
         border: 2px solid blue;
         background-color: #ffffee;
     }
+
     td.second {
         border: 2px dashed green;
     }
+
     div.test {
         color: #CC0000;
         background-color: #FFFF66;
@@ -50,12 +58,15 @@
         border-color: green #FF00FF blue red;
         text-align: center;
     }
+
     .lowercase {
         text-transform: lowercase;
     }
+
     .uppercase {
         text-transform: uppercase;
     }
+
     .capitalize {
         text-transform: capitalize;
     }
@@ -68,59 +79,59 @@
 <p id="second">Example of paragraph with ID selector. <span>Fusce et felis vitae diam lobortis sollicitudin. Aenean tincidunt accumsan nisi, id vehicula quam laoreet elementum. Phasellus egestas interdum erat, et viverra ipsum ultricies ac. Praesent sagittis augue at augue volutpat eleifend. Cras nec orci neque. Mauris bibendum posuere blandit. Donec feugiat mollis dui sit amet pellentesque. Sed a enim justo. Donec tincidunt, nisl eget elementum aliquam, odio ipsum ultrices quam, eu porttitor ligula urna at lorem. Donec varius, eros et convallis laoreet, ligula tellus consequat felis, ut ornare metus tellus sodales velit. Duis sed diam ante. Ut rutrum malesuada massa, vitae consectetur ipsum rhoncus sed. Suspendisse potenti. Pellentesque a congue massa.</span></p>
 
 <div class="test">example of DIV with border and fill.
-<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-<br /><span class="lowercase">text-transform <b>LOWERCASE</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-<br /><span class="uppercase">text-transform <b>uppercase</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-<br /><span class="capitalize">text-transform <b>cAPITALIZE</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+    <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <br /><span class="lowercase">text-transform <b>LOWERCASE</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+    <br /><span class="uppercase">text-transform <b>uppercase</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+    <br /><span class="capitalize">text-transform <b>cAPITALIZE</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
 </div>
 
 <br />
 
 <table class="first" cellpadding="4" cellspacing="6">
- <tr>
-  <td width="30" align="center"><b>No.</b></td>
-  <td width="140" align="center" bgcolor="#FFFF00"><b>XXXX</b></td>
-  <td width="140" align="center"><b>XXXX</b></td>
-  <td width="80" align="center"> <b>XXXX</b></td>
-  <td width="80" align="center"><b>XXXX</b></td>
-  <td width="45" align="center"><b>XXXX</b></td>
- </tr>
- <tr>
-  <td width="30" align="center">1.</td>
-  <td width="140" rowspan="6" class="second">XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX</td>
-  <td width="140">XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td width="80">XXXX</td>
-  <td align="center" width="45">XXXX<br />XXXX</td>
- </tr>
- <tr>
-  <td width="30" align="center" rowspan="3">2.</td>
-  <td width="140" rowspan="3">XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td align="center" width="45">XXXX<br />XXXX</td>
- </tr>
- <tr>
-  <td width="80">XXXX<br />XXXX<br />XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td align="center" width="45">XXXX<br />XXXX</td>
- </tr>
- <tr>
-  <td width="80" rowspan="2" >XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td align="center" width="45">XXXX<br />XXXX</td>
- </tr>
- <tr>
-  <td width="30" align="center">3.</td>
-  <td width="140">XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td align="center" width="45">XXXX<br />XXXX</td>
- </tr>
- <tr bgcolor="#FFFF80">
-  <td width="30" align="center">4.</td>
-  <td width="140" bgcolor="#00CC00" color="#FFFF00">XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td width="80">XXXX<br />XXXX</td>
-  <td align="center" width="45">XXXX<br />XXXX</td>
- </tr>
+    <tr>
+        <td width="30" align="center"><b>No.</b></td>
+        <td width="140" align="center" bgcolor="#FFFF00"><b>XXXX</b></td>
+        <td width="140" align="center"><b>XXXX</b></td>
+        <td width="80" align="center"> <b>XXXX</b></td>
+        <td width="80" align="center"><b>XXXX</b></td>
+        <td width="45" align="center"><b>XXXX</b></td>
+    </tr>
+    <tr>
+        <td width="30" align="center">1.</td>
+        <td width="140" rowspan="6" class="second">XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX</td>
+        <td width="140">XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td width="80">XXXX</td>
+        <td align="center" width="45">XXXX<br />XXXX</td>
+    </tr>
+    <tr>
+        <td width="30" align="center" rowspan="3">2.</td>
+        <td width="140" rowspan="3">XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td align="center" width="45">XXXX<br />XXXX</td>
+    </tr>
+    <tr>
+        <td width="80">XXXX<br />XXXX<br />XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td align="center" width="45">XXXX<br />XXXX</td>
+    </tr>
+    <tr>
+        <td width="80" rowspan="2">XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td align="center" width="45">XXXX<br />XXXX</td>
+    </tr>
+    <tr>
+        <td width="30" align="center">3.</td>
+        <td width="140">XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td align="center" width="45">XXXX<br />XXXX</td>
+    </tr>
+    <tr bgcolor="#FFFF80">
+        <td width="30" align="center">4.</td>
+        <td width="140" bgcolor="#00CC00" color="#FFFF00">XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td width="80">XXXX<br />XXXX</td>
+        <td align="center" width="45">XXXX<br />XXXX</td>
+    </tr>
 </table>

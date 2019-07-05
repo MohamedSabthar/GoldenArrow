@@ -7,7 +7,7 @@
                 <li class="sidebar-list-item">
                     <a href="#" class="sidebar-link text-muted active">
                         <i class="o-home-1 mr-3 text-gray"></i>
-                        <span>Practice Sessions</span>
+                        <span>Practice Session</span>
                     </a>
                 </li>
                 <li class="sidebar-list-item">

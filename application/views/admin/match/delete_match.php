@@ -9,7 +9,7 @@
 						</div>
 						<div class='card-body'>
 							Do you really want to delete <?= $match->matchName ?>?<p><br>
-							<a href='<?=base_url("index.php/AdminController/deleteMatchConfirmed/$match->matchId") ?>' class='btn btn-success'>Delete</a>
+								<a href='<?= base_url("index.php/AdminController/deleteMatchConfirmed/$match->matchId") ?>' class='btn btn-success'>Delete</a>
 						</div>
 					</div>
 				</div>

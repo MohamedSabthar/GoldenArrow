@@ -7,6 +7,8 @@ class TrainerPaymentController extends CI_Controller
         parent::__construct();
         $this->data = array();
         $this->load->library('session');
+
+        // security route to prevent unauthorized login
         if($this->session->userdata('userRole')!='accountant')  return redirect("/");
     }
     
@@ -24,7 +26,7 @@ class TrainerPaymentController extends CI_Controller
 
         $config = array();
         // setting up pagination
-        $config["base_url"] = "/trainerPaymentController/index";
+        $config["base_url"] = "/accountant/trainers";
         $this->pagination->initialize($config);
         $this->load->model('AccountantModel');
         $config["total_rows"] = $this->AccountantSalaryModel->numberOfTrainers();
@@ -81,7 +83,7 @@ class TrainerPaymentController extends CI_Controller
             $data.='<td>'.$result->paymentDate.'</td>';
             $data.='<td>'.$result->paymentType.'</td>';
             $data.='<td>
-                        <form method="POST" action="/trainerPaymentController/deleteSalaryRecord" class="d-inline">
+                        <form method="POST" action="/accountant/trainer/delete" class="d-inline">
                             <input name="paymentId" type="hidden" value="'.$result->salaryId.'">
                             <button onClick="return confirm(`Are you sure you want to Delete ?`)"type="submit" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
                         </form>
@@ -99,6 +101,7 @@ class TrainerPaymentController extends CI_Controller
         $paymentId = $this->input->post('paymentId');
         $this->AccountantSalaryModel->deleteSalaryRecord($paymentId); //deleting selected record from database
         
+        $this->session->set_flashdata('notification','payment deleted Successful');
         redirect('/accountant/trainers', 'refresh'); //redirecting to dashboard
     }
 
@@ -107,6 +110,7 @@ class TrainerPaymentController extends CI_Controller
         $this->load->model('AccountantSalaryModel');
         $this->AccountantSalaryModel->addSalaryRecord($this->input->post()); //insert payment record in to database
 
+        $this->session->set_flashdata('notification','salary added Successful');
         redirect('/accountant/trainers', 'refresh'); //redirecting to dashboard
     }
 }

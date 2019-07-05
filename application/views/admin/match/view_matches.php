@@ -6,7 +6,7 @@
 					<div class="card">
 						<div class="card-header">
 							<h6 style='float:left' class="text-uppercase mb-0">Matches</h6>
-							<div style='float:right'><a class='btn btn-primary' href="<?=base_url('index.php/AdminController/addMatch')?>">+</a></div>
+							<div style='float:right'><a class='btn btn-primary' href="<?= base_url('index.php/AdminController/addMatch') ?>">+</a></div>
 						</div>
 						<div class="card-body">
 							<table class="table card-text">
@@ -34,10 +34,9 @@
 										echo "<td>$row->matchLocation</td>";
 										echo "<td>$row->matchDate</td>";
 										echo "<td>$row->matchTime</td>";
-										if ($row->matchPlayed==1) {
+										if ($row->matchPlayed == 1) {
 											echo "<td>Yes ($row->matchScore-$row->matchScoreOpponent)</td>";
-										}
-										else {
+										} else {
 											echo "<td>No</td>";
 										}
 
