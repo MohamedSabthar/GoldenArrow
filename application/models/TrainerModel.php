@@ -111,7 +111,7 @@ class trainerModel extends CI_Model
 		$this->db->where('t_id', $t_id);
 		$this->db->update('targets', $data);
 	}
-
+   
 	function updateDataTargetDef($t_id)
 	{
 		$data = array(

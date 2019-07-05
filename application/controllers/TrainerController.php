@@ -1,105 +1,109 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TrainerController extends CI_Controller
-{
-	public function __construct()
-	{
-		parent::__construct();
-		$this->load->model('TrainerModel');
-		$this->load->library('session');
-		if ($this->session->userdata('userRole') != 'trainer') return redirect("/");
-	}
+class TrainerController extends CI_Controller {
+    public function __construct() {
+        parent:: __construct();
+        $this->load->model('trainerModel');
+        $this->load->library('session');
+        if($this->session->userdata('userRole')!='trainer') return redirect("/");
+    }
 
-	//Practice sessions dashboard
-	public function index()
-	{
-		$data['result'] = $this->TrainerModel->getAllData();
-		$this->load->view('trainer/practice_sessions', $data);
-	}
+    //Practice sessions dashboard
+	public function index() {
+        //setting header data
+        $header = array("title" => "Practice Sessions",
+                        "dashboardTitle" => "Trainer Dashboard",
+                        "userName" => $this->session->userdata('userName'),
+                        "userRole" => "Trainer");
 
-	//CRUD for practice sessions
-	public function create()
-	{
-		$this->TrainerModel->createData();
-		redirect("trainerController");
-	}
+        $data['result'] = $this->trainerModel->getAllData();
 
-	public function edit($ps_id)
-	{
-		$data['result'] = $this->TrainerModel->getData($this->input->post('ps_id'));
-		$this->load->view('trainer/practice_sessions', $data);
-	}
+        //loading view
+        $this->load->view('include/header', $header);
+        $this->load->view('trainer/sideBar/sidebarActivePracticeSessions');
+        $this->load->view('trainer/practice_sessions', $data);
+        $this->load->view('include/footer');
+    }
+    
+    //CRUD for practice sessions
+    public function create() {
+        $this->trainerModel->createData();
+        redirect("trainerController");
+    }
 
-	public function update($ps_id)
-	{
-		$this->TrainerModel->updateData($ps_id);
-		redirect("trainerController");
-	}
+    public function edit($ps_id) {
+        $data['result'] = $this->trainerModel->getData($this->input->post('ps_id'));
+        $this->load->view('trainer/practice_sessions', $data);
+    }
 
-	public function delete($ps_id)
-	{
-		$this->TrainerModel->deleteData($ps_id);
-		redirect("trainerController");
-	}
+    public function update($ps_id) {
+        $this->trainerModel->updateData($ps_id);
+        redirect("trainerController");
+    }
 
-	public function practiceSessions()
-	{
-		$this->load->view('trainer/practice_sessions');
-	}
-	//End of CRUD for practice sessions
+    public function delete($ps_id) {
+        $this->trainerModel->deleteData($ps_id);
+        redirect("trainerController");
+    }
 
-	//load targets view
-	public function targetsView()
-	{
-		$this->load->view('trainer/targets');
-	}
+    public function practiceSessions() {
+        $this->load->view('trainer/practice_sessions');
+    }
+    //End of CRUD for practice sessions
 
-	//Targets dashboard
-	public function indexTarget()
-	{
-		$data['result'] = $this->TrainerModel->getAllDataTarget();
-		$this->load->view('trainer/targets', $data);
-	}
+    //load targets view
+    public function targetsView() {
+        $this->load->view('trainer/targets');
+    }
 
-	//CRUD for targets
+    //Targets dashboard
+	public function indexTarget() {
+        //setting header data
+        $header = array("title" => "Team Targets",
+                        "dashboardTitle" => "Trainer Dashboard",
+                        "userName" => $this->session->userdata('userName'),
+                        "userRole" => "Trainer");
 
-	public function edit_target($t_id)
-	{
-		$data['result'] = $this->TrainerModel->getDataTarget($this->input->post('t_id'));
-		$this->load->view('trainer/targets', $data);
-	}
+        $data['result'] = $this->trainerModel->getAllDataTarget();
 
-	//Update modal for attackers
-	public function update_target_att($t_id)
-	{
-		$this->TrainerModel->updateDataTargetAtt($t_id);
-		redirect("trainerController/indexTarget");
-	}
+        //loading view
+        $this->load->view('include/header', $header);
+    	$this->load->view('trainer/sideBar/sidebarActiveTargets');
+        $this->load->view('trainer/targets', $data);
+        $this->load->view('include/footer');
+    }
 
-	//Update modal for midfielders
-	public function update_target_mid($t_id)
-	{
-		$this->TrainerModel->updateDataTargetMid($t_id);
-		redirect("trainerController/indexTarget");
-	}
+    public function edit_target($t_id) {
+        $data['result'] = $this->trainerModel->getDataTarget($this->input->post('t_id'));
+        $this->load->view('trainer/targets', $data);
+    }
 
-	//Update modal for defenders
-	public function update_target_def($t_id)
-	{
-		$this->TrainerModel->updateDataTargetDef($t_id);
-		redirect("trainerController/indexTarget");
-	}
+    //Update modal for attackers
+    public function update_target_att($t_id) {
+        $this->trainerModel->updateDataTargetAtt($t_id);
+        redirect("trainerController/indexTarget");
+    }
 
-	//Update modal for goal keeper
-	public function update_target_gk($t_id)
-	{
-		$this->TrainerModel->updateDataTargetGK($t_id);
-		redirect("trainerController/indexTarget");
-	}
+    //Update modal for midfielders
+    public function update_target_mid($t_id) {
+        $this->trainerModel->updateDataTargetMid($t_id);
+        redirect("trainerController/indexTarget");
+    }
 
-	public function target()
-	{
-		$this->load->view('trainer/targets');
-	}
+    //Update modal for defenders
+    public function update_target_def($t_id) {
+        $this->trainerModel->updateDataTargetDef($t_id);
+        redirect("trainerController/indexTarget");
+    }
+
+    //Update modal for goal keeper
+    public function update_target_gk($t_id) {
+        $this->trainerModel->updateDataTargetGK($t_id);
+        redirect("trainerController/indexTarget");
+    }
+
+    public function target() {
+        $this->load->view('trainer/targets');
+    }
 }
