@@ -504,6 +504,7 @@ class AdminController extends CI_Controller
 		$this->form_validation->set_rules('userName', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		$this->form_validation->set_rules('playerName', 'Name', 'required');
+		$this->form_validation->set_rules('DOB', 'Date of birth', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			// form is not submitted
@@ -548,6 +549,7 @@ class AdminController extends CI_Controller
 		$this->form_validation->set_rules('userName', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		$this->form_validation->set_rules('playerName', 'Name', 'required');
+		$this->form_validation->set_rules('DOB', 'Date of birth', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('include/header', $header);

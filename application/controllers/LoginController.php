@@ -19,9 +19,9 @@ class LoginController extends CI_Controller
 			$val = $this->load->LoginModel->checkLogin($username, $password);
 
 			if ($val == null) {
-				echo "User Name or Password you entered is incorrect";
+				
 				$this->session->set_flashdata('login_fail', 'Invalid Username/Pasword');
-				redirect('/');
+				return redirect('/');
 			} else {
 				$currentUser = array(
 					'userId' => $val['userId'],
@@ -45,5 +45,12 @@ class LoginController extends CI_Controller
 					return redirect('adminController');
 			}
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('/','refresh');
+		
 	}
 }

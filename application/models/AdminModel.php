@@ -168,7 +168,7 @@ class AdminModel extends CI_Model
 		// init user
 		$userData = array(
 			'userName' => $this->input->post('userName'),
-			'password' => $this->input->post('password'),
+			'password' => md5($this->input->post('password')),
 			'userRole' => 'player',
 			'accountStatus' => $this->input->post('accountStatus'),
 		);
@@ -185,7 +185,8 @@ class AdminModel extends CI_Model
 		$playerData = array(
 			'playerId' => $playerId,
 			'playerName' => $this->input->post('playerName'),
-			'playerPosition' => $this->input->post('playerPosition')
+			'playerPosition' => $this->input->post('playerPosition'),
+			'DOB' => $this->input->post('DOB')
 		);
 
 		$this->db->insert('playerData', $playerData);
@@ -193,22 +194,38 @@ class AdminModel extends CI_Model
 
 	public function editPlayer($userId)
 	{
-		// init user
-		$userData = array(
-			'userId' => $userId,
-			'userName' => $this->input->post('userName'),
-			'password' => $this->input->post('password'),
-			'userRole' => 'player',
-			'accountStatus' => $this->input->post('accountStatus'),
-		);
+		if (empty($this->input->post('password'))) {
 
-		$this->db->replace('user', $userData);
+			// init user
+			$userData = array(
+				'userId' => $userId,
+				'userName' => $this->input->post('userName'),
+				'userRole' => 'player',
+				'accountStatus' => $this->input->post('accountStatus'),
+			);
+	
+			$this->db->replace('user', $userData);
+		}
 
+		else {
+
+			// init user
+			$userData = array(
+				'userId' => $userId,
+				'userName' => $this->input->post('userName'),
+				'password' => md5($this->input->post('password')),
+				'userRole' => 'player',
+				'accountStatus' => $this->input->post('accountStatus'),
+			);
+	
+			$this->db->replace('user', $userData);
+		}
 		// add player specific data to playerData table
 		$playerData = array(
 			'playerId' => $userId,
 			'playerName' => $this->input->post('playerName'),
-			'playerPosition' => $this->input->post('playerPosition')
+			'playerPosition' => $this->input->post('playerPosition'),
+			'DOB' => $this->input->post('DOB')
 		);
 
 		$this->db->replace('playerData', $playerData);
@@ -288,16 +305,31 @@ class AdminModel extends CI_Model
 
 	public function editTrainer($userId)
 	{
-		// init user
-		$userData = array(
-			'userId' => $userId,
-			'userName' => $this->input->post('userName'),
-			'password' => $this->input->post('password'),
-			'userRole' => 'trainer',
-			'accountStatus' => 1,
-		);
+		if (empty($this->input->post('password'))) {
 
-		$this->db->replace('user', $userData);
+			// init user
+			$userData = array(
+				'userId' => $userId,
+				'userName' => $this->input->post('userName'),
+				'userRole' => 'trainer',
+				'accountStatus' => 1,
+			);
+	
+			$this->db->replace('user', $userData);
+		}
+		else {
+
+			// init user
+			$userData = array(
+				'userId' => $userId,
+				'userName' => $this->input->post('userName'),
+				'password' => md5($this->input->post('password')),
+				'userRole' => 'trainer',
+				'accountStatus' => 1,
+			);
+	
+			$this->db->replace('user', $userData);
+		}
 
 		// add player specific data to playerData table
 		$trainerData = array(
@@ -345,7 +377,7 @@ class AdminModel extends CI_Model
 		// init user
 		$userData = array(
 			'userName' => $this->input->post('userName'),
-			'password' => $this->input->post('password'),
+			'password' => md5($this->input->post('password')),
 			'userRole' => 'accountant',
 			'accountStatus' => 1
 		);
@@ -367,17 +399,31 @@ class AdminModel extends CI_Model
 
 	public function editAccountant($userId)
 	{
+		if (empty($this->input->post('password'))) {
 		// init user
 		$userData = array(
 			'userId' => $userId,
 			'userName' => $this->input->post('userName'),
-			'password' => $this->input->post('password'),
 			'userRole' => 'accountant',
 			'accountStatus' => 1
 		);
 
 		$this->db->replace('user', $userData);
+		}
+		else {
 
+
+		// init user
+		$userData = array(
+			'userId' => $userId,
+			'userName' => $this->input->post('userName'),
+			'password' => md5($this->input->post('password')),
+			'userRole' => 'accountant',
+			'accountStatus' => 1
+		);
+
+		$this->db->replace('user', $userData);
+	}
 		// add player specific data to playerData table
 		$accountantData = array(
 			'accountantId' => $userId,

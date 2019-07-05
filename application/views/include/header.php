@@ -63,7 +63,7 @@
                             <a href="#" class="dropdown-item">Profile Settings</a>
                             <div class="dropdown-divider"></div>
                         <?php endif ?>
-                        <a href="login.html" class="dropdown-item">Logout</a>
+                        <a href='/logout' class="dropdown-item">Logout</a>
                     </div>
                 </li>
             </ul>

@@ -70,3 +70,6 @@ $route['accountant/trainer/delete']='accountant//trainerPaymentController/delete
 $route['accountant/trainers/(:num)']='/accountant/trainerPaymentController/index';
 $route['accountant/payments/(:num)']='/accountant/accountantController/index';
 $route['accountant/players/(:num)']='/accountant/accountantController/viewPlayers';
+
+$route['trainer/dashboard'] = '/trainerController';
+$route['logout'] ='/loginController/logout';

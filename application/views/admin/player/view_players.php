@@ -17,6 +17,7 @@
 										<th>Status</th>
 										<th>Full name</th>
 										<th>Position</th>
+										<th>DOB</th>
 										<th></th>
 									</tr>
 								</thead>
@@ -36,6 +37,8 @@
 										}
 										echo "<td>$row->playerName</td>";
 										echo "<td>$row->playerPosition</td>";
+										echo "<td>$row->DOB</td>";
+
 										echo "<td style='text-align: right'><a class='btn btn-primary' href='$profileUrl'>Profile</a>&nbsp<a class='btn btn-warning' href='$editUrl'>Edit</a>&nbsp<a class='btn btn-danger' href='$deleteUrl'>Delete</a></td>";
 										echo '</tr>';
 									}
@@ -47,3 +50,4 @@
 				</div>
 			</div>
 		</section>
+		</div>

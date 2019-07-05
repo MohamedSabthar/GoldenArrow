@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">
-                    Developed by UCSC-46
+                   Developed by &copy Crew 13
                 </p>
             </div>
         </div>
