@@ -294,7 +294,7 @@ class AdminModel extends CI_Model
 			'userName' => $this->input->post('userName'),
 			'password' => $this->input->post('password'),
 			'userRole' => 'trainer',
-			'accountStatus' => 1
+			'accountStatus' => 1,
 		);
 
 		$this->db->replace('user', $userData);

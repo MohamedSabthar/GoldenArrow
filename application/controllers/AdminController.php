@@ -467,7 +467,7 @@ class AdminController extends CI_Controller
 		$data['player'] = $this->AdminModel->getPlayer($userId);
 
 		// header
-		$playerName = $data['player']->name;
+		$playerName = $data['player']->playerName;
 		$header = array(
 			"title" => $playerName,
 			"dashboardTitle" => "Administrator Dashboard",
@@ -659,7 +659,7 @@ class AdminController extends CI_Controller
 
 
 		// header
-		$trainerName = $data['trainer']->name;
+		$trainerName = $data['trainer']->trainerName;
 		$header = array(
 			"title" => $trainerName,
 			"dashboardTitle" => "Administrator Dashboard",
