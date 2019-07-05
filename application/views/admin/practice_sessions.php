@@ -8,9 +8,8 @@
         					<!-- <div class="col-lg-4 mb-5"> -->
         					<div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
         						<div class="flex-grow-1 d-flex align-items-center">
-        							<div class="dot mr-3 bg-blue"></div>
         							<div class="text">
-        								<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-sm">Create New Session</button>
+        								<button style="width: 100%; text-align: center" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-sm">Add New Session</button>
         								<!-- Modal -->
         								<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
         									<div role="document" class="modal-dialog">
@@ -112,7 +111,10 @@
         			<div class="row">
         				<div class="card">
         					<div class="card-header">
-        						<h3 class="h6 text-uppercase mb-0">Practice Sessions</h3>
+								<h3 class="h6 text-uppercase mb-0">Practice Sessions</h3>
+								<div style="text-align: right">
+								<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-sm">+</button>
+							</div>
         					</div>
 
         					<div class="card-body">

@@ -32,6 +32,12 @@ class trainerModel extends CI_Model
 		return $query->result();
 	}
 
+	function getPracticeSessionsOnDate($date)
+	{
+		$query = $this->db->get_where('practice_sessions', array('date' => $date));
+		return $query->result();
+	}
+
 	function getData($ps_id)
 	{
 		$this->db->where('ps_id', $ps_id);
