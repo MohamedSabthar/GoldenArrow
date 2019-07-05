@@ -8,6 +8,7 @@ class AdminController extends CI_Controller
 		$this->load->library('session');
 		if ($this->session->userdata('userRole') != 'admin') return redirect("/");
 
+		// for trainer crud
 		$this->load->model('TrainerModel');
 	}
 
@@ -31,6 +32,7 @@ class AdminController extends CI_Controller
 
 		// retrieve data
 		$data['matches'] = $this->AdminModel->getDateMatches($date);
+		$data['practice_sessions'] = $this->TrainerModel->getPracticeSessionsOnDate($date);
 
 		$data['matchCount'] = $this->AdminModel->getMatchCount();
 		$data['tournamentCount'] = $this->AdminModel->getTournamentCount();
@@ -467,7 +469,7 @@ class AdminController extends CI_Controller
 		$data['player'] = $this->AdminModel->getPlayer($userId);
 
 		// header
-		$playerName = $data['player']->name;
+		$playerName = $data['player']->playerName;
 		$header = array(
 			"title" => $playerName,
 			"dashboardTitle" => "Administrator Dashboard",
@@ -659,7 +661,7 @@ class AdminController extends CI_Controller
 
 
 		// header
-		$trainerName = $data['trainer']->name;
+		$trainerName = $data['trainer']->trainerName;
 		$header = array(
 			"title" => $trainerName,
 			"dashboardTitle" => "Administrator Dashboard",
@@ -1015,6 +1017,7 @@ class AdminController extends CI_Controller
 
 		$this->load->model('AdminModel');
 		$data['matches'] = $this->AdminModel->getDateMatches("$year-$month-$day");
+		$data['practice_sessions'] = $this->TrainerModel->getPracticeSessionsOnDate("$year-$month-$day");
 
 		//loding views
 		$this->load->view('include/header', $header);
@@ -1049,7 +1052,6 @@ class AdminController extends CI_Controller
 	}
 	//End of CRUD for practice sessions
 
-	//TODO: Change these
 	//CRUD for targets
 
 	public function edit_target($t_id)
