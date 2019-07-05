@@ -1,5 +1,5 @@
 
-<?php
+<?php 
 class RegisterController extends CI_Controller
 {
 	public function __construct()
@@ -29,13 +29,13 @@ class RegisterController extends CI_Controller
 			//echo $val;
 
 			if ($val == '1') {
-				echo ("User Name already exists! Please enter another userName");
+				// echo ("User Name already exists! Please enter another userName");
 				// redirect('registerController/addUser');
 
 
 			} else {
 				$this->RegistrationModel->addUser($name, $age, $hometown, $role, $username, $password);
-				echo ("User Added Successfully");
+				// echo ("User Added Successfully");
 			}
 		}
 	}
