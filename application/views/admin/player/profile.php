@@ -38,6 +38,12 @@
 								</h6>
 								<?php echo $player->playerPosition ?>
 							</p>
+							<p>
+								<h6>
+									Date of birth
+								</h6>
+								<?php echo $player->playerDOB ?>
+							</p>
 						</div>
 					</div>
 				</div>

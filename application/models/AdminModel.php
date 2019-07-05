@@ -185,7 +185,8 @@ class AdminModel extends CI_Model
 		$playerData = array(
 			'playerId' => $playerId,
 			'playerName' => $this->input->post('playerName'),
-			'playerPosition' => $this->input->post('playerPosition')
+			'playerPosition' => $this->input->post('playerPosition'),
+			'DOB' => $this->input->post('DOB')
 		);
 
 		$this->db->insert('playerData', $playerData);
@@ -208,7 +209,8 @@ class AdminModel extends CI_Model
 		$playerData = array(
 			'playerId' => $userId,
 			'playerName' => $this->input->post('playerName'),
-			'playerPosition' => $this->input->post('playerPosition')
+			'playerPosition' => $this->input->post('playerPosition'),
+			'DOB' => $this->input->post('DOB')
 		);
 
 		$this->db->replace('playerData', $playerData);

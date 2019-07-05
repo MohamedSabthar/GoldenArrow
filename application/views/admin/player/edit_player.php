@@ -54,6 +54,13 @@
 									</div>
 								</div>
 
+								<div class="form-group row">
+								<label class="col-md-3 form-control-label">Date</label>
+								<div class="col-md-9">
+									<input type="date" name='DOB' class="form-control" value='<?php echo $player->DOB ?>'>
+								</div>
+							</div>
+
 								<div class="line"></div>
 								<div class="form-group row">
 									<div class="col-md-9 ml-auto">
