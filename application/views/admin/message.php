@@ -9,7 +9,7 @@
 						</div>
 						<div class='card-body'>
 							<?= $text ?><p><br>
-							<a href='<?= $redirect ?>' class='btn btn-success'>OK</a>
+								<a href='<?= $redirect ?>' class='btn btn-success'>OK</a>
 						</div>
 					</div>
 				</div>

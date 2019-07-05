@@ -6,7 +6,7 @@
 					<div class="card">
 						<div class="card-header">
 							<h6 style='float:left' class="text-uppercase mb-0">Players</h6>
-							<div style='float:right'><a class='btn btn-primary' href="<?=base_url('index.php/AdminController/addPlayer')?>">+</a></div>
+							<div style='float:right'><a class='btn btn-primary' href="<?= base_url('index.php/AdminController/addPlayer') ?>">+</a></div>
 						</div>
 						<div class="card-body">
 							<table class="table card-text">

@@ -84,25 +84,25 @@
 								<h6 class="text-uppercase mb-0">Schedule</h6>
 							</div>
 							<div class="card-body">
-									<?php
-									if (empty($matches)) {
-										echo "There are no matches scheduled today!";
-									} else {
-										foreach ($matches as $row) {
-											echo "<h3>$row->matchName</h3>";
-											echo "<p><strong>Tournament: </strong>$row->tournamentName";
-											echo "<p><strong>Location: </strong>$row->matchLocation";
-											echo "<p><strong>Time: </strong>$row->matchTime";
-											echo "<p><strong>Score: </strong>";
-											if ($row->matchPlayed == 1) {
-												echo "$row->matchScore - $row->matchScoreOpponent";
-											} else {
-												echo "Not played";
-											}
-											echo "<br><br>";
+								<?php
+								if (empty($matches)) {
+									echo "There are no matches scheduled today!";
+								} else {
+									foreach ($matches as $row) {
+										echo "<h3>$row->matchName</h3>";
+										echo "<p><strong>Tournament: </strong>$row->tournamentName";
+										echo "<p><strong>Location: </strong>$row->matchLocation";
+										echo "<p><strong>Time: </strong>$row->matchTime";
+										echo "<p><strong>Score: </strong>";
+										if ($row->matchPlayed == 1) {
+											echo "$row->matchScore - $row->matchScoreOpponent";
+										} else {
+											echo "Not played";
 										}
+										echo "<br><br>";
 									}
-									?>
+								}
+								?>
 							</div>
 						</div>
 					</div>
