@@ -24,7 +24,7 @@
 
 
 	  public function addUser($name,$age,$hometown,$role,$username,$password)
-		{   
+		{   $password=md5($password);
 			$query="insert into user(username,password,userRole,name,hometown,age)values('$username','$password','$role','$name','$hometown','$age')";
 			$this->db->query($query);
 		}
