@@ -10,7 +10,7 @@ class trainerModel extends CI_Model {
     //CRUD for practice sessions
     function createData() {
         $data = array (
-            'ps_id' => $this->input->post('ps_id'),
+            // 'ps_id' => $this->input->post('ps_id'),
             'date' => $this->input->post('date'),
             'duration' => $this->input->post('duration'),
             'dribbling' => $this->input->post('dribbling'),

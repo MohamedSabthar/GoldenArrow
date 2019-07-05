@@ -11,8 +11,19 @@ class trainerController extends CI_Controller {
 
     //Practice sessions dashboard
 	public function index() {
+        //setting header data
+        $header = array("title" => "Practice Sessions",
+                        "dashboardTitle" => "Trainer Dashboard",
+                        "userName" => $this->session->userdata('userName'),
+                        "userRole" => "Trainer");
+
         $data['result'] = $this->trainerModel->getAllData();
+
+        //loading view
+        $this->load->view('include/header', $header);
+        $this->load->view('trainer/sideBar/sidebarActivePracticeSessions');
         $this->load->view('trainer/practice_sessions', $data);
+        $this->load->view('include/footer');
     }
     
     //CRUD for practice sessions
@@ -48,11 +59,20 @@ class trainerController extends CI_Controller {
 
     //Targets dashboard
 	public function indexTarget() {
-        $data['result'] = $this->trainerModel->getAllDataTarget();
-        $this->load->view('trainer/targets', $data);
-    }
+        //setting header data
+        $header = array("title" => "Team Targets",
+                        "dashboardTitle" => "Trainer Dashboard",
+                        "userName" => $this->session->userdata('userName'),
+                        "userRole" => "Trainer");
 
-    //CRUD for targets
+        $data['result'] = $this->trainerModel->getAllDataTarget();
+
+        //loading view
+        $this->load->view('include/header', $header);
+        $this->load->view('trainer/sideBar/sidebarActiveTargets');
+        $this->load->view('trainer/targets', $data);
+        $this->load->view('include/footer');
+    }
 
     public function edit_target($t_id) {
         $data['result'] = $this->trainerModel->getDataTarget($this->input->post('t_id'));
